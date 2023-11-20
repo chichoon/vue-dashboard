@@ -26,23 +26,30 @@ const route = useRoute();
 <style scoped lang="scss">
 .list {
   width: 100%;
-  height: 100%;
   padding: 10px 15px 0 15px;
 
   &__link {
     display: inline-block;
     width: 100%;
-    height: 100%;
+    padding: 10px 15px;
     color: var(--text-ternary);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.1s ease-in;
+
+    & > span {
+      margin-left: 15px;
+      font-size: var(--font-md);
+    }
 
     &:hover {
-      background-color: var(--bg-primary);
+      background-color: var(--bg-hover);
     }
 
     &--focused {
-      background-color: var(--notification-success);
+      background-color: var(--notification-success) !important;
       color: var(--white);
     }
   }
