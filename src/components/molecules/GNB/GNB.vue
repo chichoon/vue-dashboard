@@ -8,12 +8,12 @@ import UploadIcon from '@/components/icons/UploadIcon.vue';
 <template>
   <div class="gnb">
     <div class="gnb__inner">
-      <div class="gnb__title">
+      <a href="https://github.com/chichoon" target="_blank" noreferrer class="gnb__title">
         <div class="gnb__vue-icon">
           <VueIcon />
         </div>
         <h1>VUE MD</h1>
-      </div>
+      </a>
       <ul class="gnb__list">
         <NavigationElement
           v-for="element in NAV_LIST"
@@ -46,6 +46,7 @@ import UploadIcon from '@/components/icons/UploadIcon.vue';
     height: 70px;
     padding: 15px 5px;
     margin: 0 15px;
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     align-items: center;
