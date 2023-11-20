@@ -24,6 +24,8 @@ const { isGNBOpen } = storeToRefs(store);
 .page {
   display: flex;
   flex-direction: row-reverse;
+  width: 100vw;
+  overflow-x: hidden;
 
   &__inner {
     flex: 1;
@@ -32,6 +34,12 @@ const { isGNBOpen } = storeToRefs(store);
   }
 
   &__gnb {
+    margin-right: -260px;
+    transition: margin 0.2s ease-in;
+
+    &--open {
+      margin-right: 0;
+    }
   }
 
   @media screen and (min-width: 992px) {
