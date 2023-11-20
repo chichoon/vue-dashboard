@@ -6,6 +6,7 @@ import DashboardIcon from '@/components/icons/DashboardIcon.vue';
 import BellIcon from '@/components/icons/BellIcon.vue';
 import UserIcon from '@/components/icons/UserIcon.vue';
 import { TITLE_LIST } from './constants';
+import HamburgerButton from '@/components/atoms/HamburgerButton.vue';
 
 const route = useRoute();
 </script>
@@ -29,6 +30,7 @@ const route = useRoute();
         </RouterLink>
       </div>
     </div>
+    <HamburgerButton class="header__hamburger" />
   </header>
 </template>
 
@@ -58,11 +60,15 @@ const route = useRoute();
   }
 
   &__right-section {
-    width: 400px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 15px;
+    display: none;
+
+    @media screen and (min-width: 992px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 400px;
+      padding-right: 15px;
+    }
   }
 
   &__icons {
@@ -100,6 +106,12 @@ const route = useRoute();
       font-weight: 300;
       color: var(--white);
       border: 1px solid var(--white);
+    }
+  }
+
+  &__hamburger {
+    @media screen and (min-width: 992px) {
+      display: none;
     }
   }
 }
