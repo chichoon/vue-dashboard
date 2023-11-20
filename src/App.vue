@@ -44,6 +44,10 @@ const { isGNBOpen } = storeToRefs(store);
 
   @media screen and (min-width: 992px) {
     flex-direction: row;
+
+    &__gnb {
+      margin-right: 0;
+    }
   }
 }
 </style>
