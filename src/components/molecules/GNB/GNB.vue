@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import NavigationElement from '@/components/atoms/NavigationElement.vue';
-import { NAV_LIST } from './constants';
 import VueIcon from '@/components/icons/VueIcon.vue';
 import UploadIcon from '@/components/icons/UploadIcon.vue';
+import { NAV_LIST } from './constants';
+import SearchBar from '@/components/atoms/SearchBar.vue';
 </script>
 
 <template>
@@ -15,6 +16,9 @@ import UploadIcon from '@/components/icons/UploadIcon.vue';
         <h1>VUE MD</h1>
       </a>
       <ul class="gnb__list">
+        <li class="gnb__search-bar">
+          <SearchBar is-in-dark-area />
+        </li>
         <NavigationElement
           v-for="element in NAV_LIST"
           :key="element.text"
@@ -22,6 +26,9 @@ import UploadIcon from '@/components/icons/UploadIcon.vue';
           :to="element.to"
         >
           <component :is="element.icon" />
+        </NavigationElement>
+        <NavigationElement text="Upgrade To PRO" to="" class="gnb__upgrade">
+          <UploadIcon />
         </NavigationElement>
       </ul>
       <div class="gnb__footer">
@@ -89,6 +96,22 @@ import UploadIcon from '@/components/icons/UploadIcon.vue';
     width: 100%;
     height: calc(100vh - 140px);
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__search-bar {
+    margin-top: 30px;
+    @media screen and (min-width: 992px) {
+      display: none !important;
+    }
+  }
+
+  &__upgrade {
+    @media screen and (min-width: 992px) {
+      display: none !important;
+    }
   }
 
   &__footer {
@@ -109,6 +132,9 @@ import UploadIcon from '@/components/icons/UploadIcon.vue';
     & > span {
       margin-left: 15px;
       font-size: var(--font-md);
+    }
+    @media screen and (max-width: 991px) {
+      display: none;
     }
   }
 }

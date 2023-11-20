@@ -3,6 +3,12 @@ import { ref } from 'vue';
 
 import CancelIcon from '../icons/CancelIcon.vue';
 
+interface Props {
+  isInDarkArea?: boolean;
+}
+
+defineProps<Props>();
+
 const isFocused = ref<boolean>(false);
 const searchValue = ref<string>('');
 
@@ -21,7 +27,7 @@ const handleClickEraseButton = () => {
       >Search...</span
     >
     <input
-      class="search-bar__input"
+      :class="['search-bar__input', { 'search-bar__input--light': isInDarkArea }]"
       type="text"
       @focus="() => (isFocused = true)"
       @blur="() => (isFocused = false)"
@@ -29,7 +35,10 @@ const handleClickEraseButton = () => {
     />
     <button
       @click="handleClickEraseButton"
-      :class="['search-bar__button', { 'search-bar__button--hidden': searchValue.length <= 0 }]"
+      :class="[
+        'search-bar__button',
+        { 'search-bar__button--hidden': searchValue.length <= 0 || isInDarkArea }
+      ]"
     >
       <CancelIcon />
     </button>
@@ -85,6 +94,10 @@ const handleClickEraseButton = () => {
     color: var(--text-primary);
     padding: 10px 30px 10px 0;
     position: relative;
+
+    &--light {
+      color: var(--white);
+    }
 
     &:focus {
       outline: none;
