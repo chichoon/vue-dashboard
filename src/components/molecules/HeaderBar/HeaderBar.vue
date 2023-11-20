@@ -2,6 +2,9 @@
 import { useRoute } from 'vue-router';
 
 import SearchBar from '@/components/atoms/SearchBar.vue';
+import DashboardIcon from '@/components/icons/DashboardIcon.vue';
+import BellIcon from '@/components/icons/BellIcon.vue';
+import UserIcon from '@/components/icons/UserIcon.vue';
 import { TITLE_LIST } from './constants';
 
 const route = useRoute();
@@ -9,11 +12,22 @@ const route = useRoute();
 
 <template>
   <header class="header">
-    <div class="header__section">
+    <div class="header__left-section">
       <h2 class="header__title">{{ TITLE_LIST[route.path] }}</h2>
     </div>
-    <div class="header__section">
+    <div class="header__right-section">
       <SearchBar />
+      <div class="header__icons">
+        <RouterLink class="header__icon" to="/dashboard">
+          <DashboardIcon />
+        </RouterLink>
+        <RouterLink class="header__icon" to="/notifications">
+          <BellIcon />
+        </RouterLink>
+        <RouterLink class="header__icon" to="/user">
+          <UserIcon />
+        </RouterLink>
+      </div>
     </div>
   </header>
 </template>
@@ -25,16 +39,13 @@ const route = useRoute();
   align-items: center;
   padding: 10px 15px;
 
-  &__section {
+  &__left-section {
     flex: 1;
-
-    &:nth-child(1) {
-      padding-left: 15px;
-    }
-
-    &:nth-child(2) {
-      padding-right: 15px;
-    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
   }
 
   &__title {
@@ -44,6 +55,52 @@ const route = useRoute();
     font-weight: 300;
     margin-right: 15px;
     padding: 10px 0;
+  }
+
+  &__right-section {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 15px;
+  }
+
+  &__icons {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 0 5px;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    color: var(--text-primary);
+
+    & > svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:nth-child(2)::before {
+      content: '5';
+      position: absolute;
+      top: 0px;
+      right: 5px;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      background-color: var(--notification-danger);
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      font-size: var(--font-sm);
+      font-weight: 300;
+      color: var(--white);
+      border: 1px solid var(--white);
+    }
   }
 }
 </style>
