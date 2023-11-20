@@ -6,7 +6,7 @@ import type { ClassType } from '@/types/common';
 interface Props {
   text: string;
   to: string;
-  className: ClassType;
+  className?: ClassType;
 }
 
 defineProps<Props>();
@@ -27,6 +27,7 @@ const route = useRoute();
 .list {
   width: 100%;
   height: 100%;
+  padding: 10px 15px 0 15px;
 
   &__link {
     display: inline-block;
@@ -34,6 +35,7 @@ const route = useRoute();
     height: 100%;
     color: var(--text-ternary);
     text-decoration: none;
+    border-radius: 5px;
 
     &:hover {
       background-color: var(--bg-primary);
@@ -42,10 +44,6 @@ const route = useRoute();
     &--focused {
       background-color: var(--notification-success);
       color: var(--white);
-
-      &:hover {
-        background-color: var(--notification-success);
-      }
     }
   }
 }

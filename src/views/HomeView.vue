@@ -3,7 +3,5 @@ import GNB from '@/components/molecules/GNB';
 </script>
 
 <template>
-  <main>
-    <GNB />
-  </main>
+  <main></main>
 </template>
