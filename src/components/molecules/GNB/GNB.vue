@@ -1,20 +1,22 @@
 <script setup lang="ts">
-import NavigationChip from '@/components/atoms/NavigationChip.vue';
+import NavigationElement from '@/components/atoms/NavigationElement.vue';
 import { NAV_LIST } from './constants';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 </script>
 
 <template>
   <div class="gnb-wrapper">
     <ul class="gnb-list">
-      <NavigationChip
+      <NavigationElement
         v-for="element in NAV_LIST"
         :key="element.text"
         :text="element.text"
         :to="element.to"
-        :className="'asd'"
       >
         <component :is="element.icon" />
-      </NavigationChip>
+      </NavigationElement>
     </ul>
   </div>
 </template>
