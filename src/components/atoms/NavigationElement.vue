@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, useRoute } from 'vue-router';
-import { classMerge } from '@/utils/classMerge';
-import type { ClassType } from '@/types/common';
 
 interface Props {
   text: string;
   to: string;
-  className?: ClassType;
 }
 
 defineProps<Props>();
@@ -15,7 +12,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <li :class="classMerge('list', className)">
+  <li class="list">
     <RouterLink :to="to" :class="['list__link', { 'list__link--focused': route.path === to }]">
       <slot />
       <span>{{ text }}</span>
