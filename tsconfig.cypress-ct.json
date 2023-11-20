@@ -8,7 +8,5 @@
     "cypress/support/commands.ts"
   ],
   "exclude": [],
-  "compilerOptions": {
-    "composite": true
-  }
+  "compilerOptions": {}
 }
