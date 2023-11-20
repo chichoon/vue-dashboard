@@ -1,5 +1,6 @@
 <template>
   <svg
+    fill="currentColor"
     height="800px"
     width="800px"
     version="1.1"

@@ -1,5 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import GNB from '@/components/molecules/GNB';
+</script>
 
 <template>
-  <main></main>
+  <main>
+    <GNB />
+  </main>
 </template>
