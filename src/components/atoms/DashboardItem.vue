@@ -1,0 +1,60 @@
+<script setup lang="ts">
+import { createLinearGradient } from '@/utils/createLinearGradient';
+
+interface Props {
+  color: 'info' | 'success' | 'warning' | 'danger' | 'primary';
+}
+
+const { color } = defineProps<Props>();
+</script>
+
+<template>
+  <section class="dashboard-item">
+    <div class="dashboard-item__wrapper">
+      <div
+        class="dashboard-item__top"
+        :style="`background: ${createLinearGradient(
+          color
+        )}; box-shadow: 0 12px 20px -10px var(--notification-${color});`"
+      >
+        <slot name="top"></slot>
+      </div>
+
+      <div class="dashboard-item__bottom">
+        <slot name="bottom"></slot>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped lang="scss">
+.dashboard-item {
+  padding: 0 15px;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    margin: 25px 0;
+    position: relative;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 3px;
+    overflow: unset;
+  }
+
+  &__top {
+    z-index: 2;
+    margin: -20px 15px 0;
+    padding: 0;
+    border-radius: 3px;
+    min-height: 160px;
+  }
+
+  &__bottom {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 3px;
+  }
+}
+</style>
