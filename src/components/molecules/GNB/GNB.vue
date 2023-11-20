@@ -1,11 +1,19 @@
 <script setup lang="ts">
 import NavigationElement from '@/components/atoms/NavigationElement.vue';
 import { NAV_LIST } from './constants';
+import VueIcon from '@/components/icons/VueIcon.vue';
+import UploadIcon from '@/components/icons/UploadIcon.vue';
 </script>
 
 <template>
   <div class="gnb">
     <div class="gnb__inner">
+      <div class="gnb__title">
+        <div class="gnb__vue-icon">
+          <VueIcon />
+        </div>
+        <h1>VUE MD</h1>
+      </div>
       <ul class="gnb__list">
         <NavigationElement
           v-for="element in NAV_LIST"
@@ -16,8 +24,11 @@ import { NAV_LIST } from './constants';
           <component :is="element.icon" />
         </NavigationElement>
       </ul>
+      <div class="gnb__footer">
+        <UploadIcon />
+        <span>Upgrade To PRO</span>
+      </div>
     </div>
-    <img class="gnb__image" src="/sidebar.jpg" />
   </div>
 </template>
 
@@ -26,6 +37,42 @@ import { NAV_LIST } from './constants';
   width: 260px;
   height: 100vh;
   position: relative;
+  background-image: url(/sidebar.jpg);
+  background-size: cover;
+  background-position: 50%;
+
+  &__title {
+    width: calc(100% - 30px);
+    height: 70px;
+    padding: 15px 5px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+
+    & > h1 {
+      margin-left: 10px;
+      font-size: var(--font-xl);
+      color: var(--white);
+    }
+  }
+
+  &__vue-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > svg {
+      width: 25px;
+      height: 25px;
+      margin-top: 2px;
+    }
+  }
 
   &__inner {
     position: absolute;
@@ -37,14 +84,31 @@ import { NAV_LIST } from './constants';
     z-index: 1;
   }
 
-  &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+  &__list {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: calc(100vh - 140px);
+    overflow: scroll;
+  }
+
+  &__footer {
+    width: calc(100% - 30px);
+    height: 70px;
+    padding: 15px 5px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--white);
+
+    & > svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    & > span {
+      margin-left: 15px;
+      font-size: var(--font-md);
+    }
   }
 }
 </style>
