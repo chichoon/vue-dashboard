@@ -27,14 +27,13 @@ import SearchBar from '@/components/atoms/SearchBar.vue';
         >
           <component :is="element.icon" />
         </NavigationElement>
-        <NavigationElement text="Upgrade To PRO" to="" class="gnb__upgrade">
+        <NavigationElement text="Upgrade To PRO" to="upgrade" class="gnb__upgrade">
           <UploadIcon />
         </NavigationElement>
       </ul>
-      <div class="gnb__footer">
+      <NavigationElement text="Upgrade To PRO" to="upgrade" class="gnb__footer">
         <UploadIcon />
-        <span>Upgrade To PRO</span>
-      </div>
+      </NavigationElement>
     </div>
   </div>
 </template>
@@ -115,24 +114,10 @@ import SearchBar from '@/components/atoms/SearchBar.vue';
   }
 
   &__footer {
-    width: calc(100% - 30px);
+    padding-top: 0;
     height: 70px;
-    padding: 15px 5px;
-    margin: 0 15px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: var(--white);
 
-    & > svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    & > span {
-      margin-left: 15px;
-      font-size: var(--font-md);
-    }
     @media screen and (max-width: 991px) {
       display: none;
     }
