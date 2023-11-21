@@ -1,6 +1,6 @@
 export const vRipple = {
   mounted(el: HTMLElement, binding: { value: string }) {
-    const color = binding.value || '#FFFFFF';
+    const color = '#' + (binding.value || 'FFFFFF');
     el.style.position = 'relative';
     el.style.overflow = 'hidden';
     el.onclick = function (event: MouseEvent) {

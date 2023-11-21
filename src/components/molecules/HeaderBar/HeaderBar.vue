@@ -3,6 +3,7 @@ import { useRoute } from 'vue-router';
 
 import SearchBar from '@/components/atoms/SearchBar.vue';
 import { DashboardIcon, BellIcon, UserIcon } from '@/components/icons';
+import { vRipple } from '@/directives/vRipple';
 import { TITLE_LIST } from './constants';
 import HamburgerButton from '@/components/atoms/HamburgerButton.vue';
 
@@ -17,13 +18,13 @@ const route = useRoute();
     <div class="header__right-section">
       <SearchBar />
       <div class="header__icons">
-        <RouterLink class="header__icon" to="/dashboard">
+        <RouterLink class="header__icon" to="/dashboard" v-ripple="'333333'">
           <DashboardIcon />
         </RouterLink>
-        <RouterLink class="header__icon" to="/notifications">
+        <RouterLink class="header__icon" to="/notifications" v-ripple="'333333'">
           <BellIcon />
         </RouterLink>
-        <RouterLink class="header__icon" to="/user">
+        <RouterLink class="header__icon" to="/user" v-ripple="'333333'">
           <UserIcon />
         </RouterLink>
       </div>
