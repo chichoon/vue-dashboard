@@ -32,6 +32,12 @@ const { color } = defineProps<Props>();
   padding: 0 15px;
   width: 100%;
 
+  @media screen and (min-width: 1281px) {
+    max-width: 33.33333%;
+    min-width: 33.33333%;
+    flex: 33.3333%;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;

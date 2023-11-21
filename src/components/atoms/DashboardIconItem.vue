@@ -47,6 +47,13 @@ const { color } = defineProps<Props>();
   @media screen and (min-width: 601px) {
     max-width: 50%;
     min-width: 50%;
+    flex: 50%;
+  }
+
+  @media screen and (min-width: 1281px) {
+    max-width: 25%;
+    min-width: 25%;
+    flex: 25%;
   }
 
   &__wrapper {
