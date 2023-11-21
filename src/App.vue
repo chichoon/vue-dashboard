@@ -4,6 +4,7 @@ import { storeToRefs } from 'pinia';
 import GNB from './components/molecules/GNB';
 import HeaderBar from './components/molecules/HeaderBar';
 import { useGNBOpen } from './stores/useGNBOpen';
+import FooterBar from './components/molecules/FooterBar.vue';
 
 const store = useGNBOpen();
 const { isGNBOpen } = storeToRefs(store);
@@ -15,7 +16,7 @@ const { isGNBOpen } = storeToRefs(store);
     <div class="page__inner">
       <HeaderBar />
       <RouterView />
-      <!--Footer Bar-->
+      <FooterBar />
     </div>
   </div>
 </template>
@@ -30,6 +31,7 @@ const { isGNBOpen } = storeToRefs(store);
   &__inner {
     flex: 1;
     height: 100vh;
+    overflow-y: scroll;
     background-color: var(--bg-primary);
   }
 
