@@ -15,6 +15,8 @@ import {
   TimePastIcon,
   TwitterIcon
 } from '@/components/icons';
+import GridTable from '@/components/molecules/GridTable.vue';
+import { TABLE_HEADERS, TABLE_DATA } from '@/utils/constants';
 </script>
 
 <template>
@@ -114,6 +116,9 @@ import {
       subtitle="New employees on 15th September, 2016"
       color="warning"
     >
+      <template #bottom>
+        <GridTable color="warning" :table-data="TABLE_DATA" :table-headings="TABLE_HEADERS" />
+      </template>
     </DashboardTitleItem>
     <DashboardTodoItem color="success" />
   </main>

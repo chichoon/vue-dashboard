@@ -57,6 +57,7 @@ const { changeSelected } = inject(TodoInjectionKey) as TodoInjection;
 
       & > span {
         font-size: var(--font-md);
+        text-transform: uppercase;
       }
 
       & > svg {
