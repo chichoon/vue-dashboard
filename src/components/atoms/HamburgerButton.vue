@@ -20,8 +20,6 @@ const handleToggleGNB = () => {
 </template>
 
 <style scoped lang="scss">
-@import '../../assets/animation.scss';
-
 .hamburger {
   position: relative;
   display: inline-block;
@@ -31,10 +29,6 @@ const handleToggleGNB = () => {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-
-  &:active {
-    animation: button-flash 0.2s ease-in-out;
-  }
 
   & > svg {
     width: 20px;

@@ -29,7 +29,7 @@ const route = useRoute();
         </RouterLink>
       </div>
     </div>
-    <HamburgerButton class="header__hamburger" />
+    <HamburgerButton class="header__hamburger" v-ripple="'333333'" />
   </header>
 </template>
 
