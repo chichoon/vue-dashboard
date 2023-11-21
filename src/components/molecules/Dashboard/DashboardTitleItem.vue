@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { DashboardColorType } from '@/types/common';
+import Dashboard from '@/components/atoms/Dashboard';
 import { createLinearGradient } from '@/utils/createLinearGradient';
 
 interface Props {
@@ -12,14 +13,9 @@ const { color } = defineProps<Props>();
 <template>
   <section class="dashboard-item">
     <div class="dashboard-item__wrapper">
-      <div
-        class="dashboard-item__top"
-        :style="`background: ${createLinearGradient(
-          color
-        )}; box-shadow: 0 12px 20px -10px var(--notification-${color});`"
-      >
+      <Dashboard.TopSection :color="color" type="title">
         <slot name="top"></slot>
-      </div>
+      </Dashboard.TopSection>
 
       <div class="dashboard-item__bottom">
         <slot name="bottom"></slot>
