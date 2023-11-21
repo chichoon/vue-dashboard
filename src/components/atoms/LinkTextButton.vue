@@ -4,11 +4,11 @@ interface Props {
   text: string;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 </script>
 <template>
-  <RouterLink :to="props.to ?? ''" class="link-text">
-    <span>{{ props.text }}</span>
+  <RouterLink :to="to ?? ''" class="link-text">
+    <span>{{ text }}</span>
   </RouterLink>
 </template>
 
