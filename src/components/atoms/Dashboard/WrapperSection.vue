@@ -28,7 +28,8 @@ defineProps<Props>();
   border-radius: 3px;
   overflow: unset;
 
-  &--graph {
+  &--graph,
+  &--title {
     display: flex;
     flex-direction: column;
   }

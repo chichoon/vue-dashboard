@@ -13,27 +13,30 @@ const { color } = defineProps<Props>();
 
 <template>
   <section class="dashboard-item">
-    <div class="dashboard-item__wrapper">
-      <Dashboard.TopSection :color="color" type="title">
-        <template #top>
-          <Dashboard.TitleTopSection
-            :title="title"
-            :subtitle="subtitle"
-          ></Dashboard.TitleTopSection>
-        </template>
-      </Dashboard.TopSection>
+    <Dashboard.WrapperSection type="title">
+      <template #inner>
+        <Dashboard.TopSection :color="color" type="title">
+          <template #top>
+            <Dashboard.TitleTopSection
+              :title="title"
+              :subtitle="subtitle"
+            ></Dashboard.TitleTopSection>
+          </template>
+        </Dashboard.TopSection>
 
-      <div class="dashboard-item__bottom">
-        <slot name="bottom"></slot>
-      </div>
-    </div>
+        <div class="dashboard-item__bottom">
+          <slot name="bottom"></slot>
+        </div>
+      </template>
+    </Dashboard.WrapperSection>
   </section>
 </template>
 
 <style scoped lang="scss">
 .dashboard-item {
   padding: 0 15px;
-  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
 
   @media screen and (min-width: 1281px) {
     max-width: 50%;

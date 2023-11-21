@@ -2,7 +2,8 @@
 import {
   DashboardIconItem,
   DashboardGraphItem,
-  DashboardTitleItem
+  DashboardTitleItem,
+  DashboardTodoItem
 } from '@/components/molecules/Dashboard';
 import AlertIcon from '@/components/icons/AlertIcon.vue';
 import ArrowIcon from '@/components/icons/ArrowIcon.vue';
@@ -112,6 +113,7 @@ import TwitterIcon from '@/components/icons/TwitterIcon.vue';
       color="warning"
     >
     </DashboardTitleItem>
+    <DashboardTodoItem color="success" />
   </main>
 </template>
 
