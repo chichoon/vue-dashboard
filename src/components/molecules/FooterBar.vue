@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import LinkTextButton from '../atoms/LinkTextButton.vue';
-import HeartIcon from '../icons/HeartIcon.vue';
+import { HeartIcon } from '../icons';
 </script>
 
 <template>

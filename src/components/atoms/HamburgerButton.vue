@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 
-import CancelIcon from '@/components/icons/CancelIcon.vue';
-import HamburgerIcon from '@/components/icons/HamburgerIcon.vue';
+import { CancelIcon, HamburgerIcon } from '@/components/icons';
 import { useGNBOpen } from '@/stores/useGNBOpen';
 
 const store = useGNBOpen();

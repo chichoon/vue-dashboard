@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import CancelIcon from '../icons/CancelIcon.vue';
+import { CancelIcon } from '../icons';
 
 interface Props {
   isInDarkArea?: boolean;

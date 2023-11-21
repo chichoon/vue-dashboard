@@ -5,14 +5,16 @@ import {
   DashboardTitleItem,
   DashboardTodoItem
 } from '@/components/molecules/Dashboard';
-import AlertIcon from '@/components/icons/AlertIcon.vue';
-import ArrowIcon from '@/components/icons/ArrowIcon.vue';
-import CalendarIcon from '@/components/icons/CalendarIcon.vue';
-import InfoIcon from '@/components/icons/InfoIcon.vue';
-import LabelIcon from '@/components/icons/LabelIcon.vue';
-import StoreIcon from '@/components/icons/StoreIcon.vue';
-import TimePastIcon from '@/components/icons/TimePastIcon.vue';
-import TwitterIcon from '@/components/icons/TwitterIcon.vue';
+import {
+  AlertIcon,
+  ArrowIcon,
+  CalendarIcon,
+  InfoIcon,
+  LabelIcon,
+  StoreIcon,
+  TimePastIcon,
+  TwitterIcon
+} from '@/components/icons';
 </script>
 
 <template>

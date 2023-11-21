@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import NavigationElement from '@/components/atoms/NavigationElement.vue';
-import VueIcon from '@/components/icons/VueIcon.vue';
-import UploadIcon from '@/components/icons/UploadIcon.vue';
+import { VueIcon, UploadIcon } from '@/components/icons';
 import { NAV_LIST } from './constants';
 import SearchBar from '@/components/atoms/SearchBar.vue';
 </script>

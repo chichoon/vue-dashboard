@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import CheckBox from '../CheckBox.vue';
+import { PencilIcon, CancelIcon } from '@/components/icons';
 import type { TodoType } from '@/types/todo';
-import PencilIcon from '@/components/icons/PencilIcon.vue';
-import CancelIcon from '@/components/icons/CancelIcon.vue';
+import CheckBox from '../CheckBox.vue';
 
 interface Props {
   todo: TodoType;

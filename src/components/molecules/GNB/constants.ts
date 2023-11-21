@@ -1,10 +1,12 @@
-import DashboardIcon from '@/components/icons/DashboardIcon.vue';
-import UserIcon from '@/components/icons/UserIcon.vue';
-import ClipboardIcon from '@/components/icons/ClipboardIcon.vue';
-import NoteIcon from '@/components/icons/NoteIcon.vue';
-import CirclesIcon from '@/components/icons/CirclesIcon.vue';
-import MapIcon from '@/components/icons/MapIcon.vue';
-import BellIcon from '@/components/icons/BellIcon.vue';
+import {
+  DashboardIcon,
+  UserIcon,
+  ClipboardIcon,
+  NoteIcon,
+  CirclesIcon,
+  MapIcon,
+  BellIcon
+} from '@/components/icons';
 import type { Component } from 'vue';
 
 interface NavElement {

@@ -3,9 +3,6 @@ import { inject } from 'vue';
 
 import { type TodoInjection, type TodoType } from '@/types/todo';
 import { TodoInjectionKey } from '@/injection/todo';
-import CheckBox from '../CheckBox.vue';
-import PencilIcon from '@/components/icons/PencilIcon.vue';
-import CancelIcon from '@/components/icons/CancelIcon.vue';
 import TodoElement from './TodoElement.vue';
 
 interface Props {

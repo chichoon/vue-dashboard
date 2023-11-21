@@ -1,6 +1,4 @@
-import BugIcon from '@/components/icons/BugIcon.vue';
-import CloudIcon from '@/components/icons/CloudIcon.vue';
-import CodeIcon from '@/components/icons/CodeIcon.vue';
+import { BugIcon, CloudIcon, CodeIcon } from '@/components/icons';
 import type { TodoCategory, TodoType } from '@/types/todo';
 
 export const TODO_LIST: Record<string, TodoType[]> = {

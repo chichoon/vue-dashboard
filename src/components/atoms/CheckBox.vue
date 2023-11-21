@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import type { Ref } from 'vue';
-
-import CheckIcon from '../icons/CheckIcon.vue';
+import { CheckIcon } from '../icons';
 
 interface Props {
   isDone: boolean;

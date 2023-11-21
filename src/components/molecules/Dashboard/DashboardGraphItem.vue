@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ClockIcon from '@/components/icons/ClockIcon.vue';
+import { ClockIcon } from '@/components/icons';
 import type { DashboardColorType } from '@/types/common';
 import Dashboard from '@/components/atoms/Dashboard';
 

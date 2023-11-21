@@ -2,9 +2,7 @@
 import { useRoute } from 'vue-router';
 
 import SearchBar from '@/components/atoms/SearchBar.vue';
-import DashboardIcon from '@/components/icons/DashboardIcon.vue';
-import BellIcon from '@/components/icons/BellIcon.vue';
-import UserIcon from '@/components/icons/UserIcon.vue';
+import { DashboardIcon, BellIcon, UserIcon } from '@/components/icons';
 import { TITLE_LIST } from './constants';
 import HamburgerButton from '@/components/atoms/HamburgerButton.vue';
 
