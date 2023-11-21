@@ -128,5 +128,6 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/constants';
 .dashboard-view {
   display: flex;
   flex-wrap: wrap;
+  padding: 30px 15px;
 }
 </style>
