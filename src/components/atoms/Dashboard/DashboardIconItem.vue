@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { DashboardColorType } from '@/types/common';
 import { createLinearGradient } from '@/utils/createLinearGradient';
 
 interface Props {
-  color: 'info' | 'success' | 'warning' | 'danger' | 'primary';
+  color: DashboardColorType;
   title: string;
   textPrimary: string;
   textSecondary?: string;
