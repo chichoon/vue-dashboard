@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import DashboardIconItem from '@/components/atoms/DashboardIconItem.vue';
-import DashboardItem from '@/components/atoms/DashboardItem.vue';
+import {
+  DashboardIconItem,
+  DashboardGraphItem,
+  DashboardTitleItem
+} from '@/components/molecules/Dashboard';
 import AlertIcon from '@/components/icons/AlertIcon.vue';
+import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import CalendarIcon from '@/components/icons/CalendarIcon.vue';
-import ClockIcon from '@/components/icons/ClockIcon.vue';
 import InfoIcon from '@/components/icons/InfoIcon.vue';
 import LabelIcon from '@/components/icons/LabelIcon.vue';
 import StoreIcon from '@/components/icons/StoreIcon.vue';
@@ -13,30 +16,43 @@ import TwitterIcon from '@/components/icons/TwitterIcon.vue';
 
 <template>
   <main class="dashboard-view">
-    <DashboardItem color="info">
+    <DashboardGraphItem
+      title="Daily Sales"
+      emphasis-text="55% "
+      common-text="increase in today sales."
+      color="info"
+      bottom-text="updated 4 minutes ago"
+    >
       <template #top>
-        <div>hiisdfsdfsdfh</div>
+        <div>Graph Goes here...</div>
       </template>
-      <template #bottom>
-        <div>asds</div>
+      <template #emphasis-icon>
+        <ArrowIcon />
       </template>
-    </DashboardItem>
-    <DashboardItem color="danger">
+    </DashboardGraphItem>
+    <DashboardGraphItem
+      title="Email Subscription"
+      common-text="Last Campaign Performance"
+      color="danger"
+      bottom-text="updated 10 days ago"
+    >
       <template #top>
-        <div>hiisdfsdfsdfh</div>
+        <div>Graph Goes here...</div>
       </template>
-      <template #bottom>
-        <div>asds</div>
+      <template #middle>
+        <span>Last Campaign Performance</span>
       </template>
-    </DashboardItem>
-    <DashboardItem color="success">
+    </DashboardGraphItem>
+    <DashboardGraphItem
+      title="Completed Tasks"
+      common-text="Last Campaign Performance"
+      color="success"
+      bottom-text="campaign sent 26 minutes ago"
+    >
       <template #top>
-        <div>hiisdfsdfsdfh</div>
+        <div>Graph Goes here...</div>
       </template>
-      <template #bottom>
-        <div>asds</div>
-      </template>
-    </DashboardItem>
+    </DashboardGraphItem>
     <DashboardIconItem
       title="Revenue"
       text-primary="$34,245"
@@ -90,6 +106,12 @@ import TwitterIcon from '@/components/icons/TwitterIcon.vue';
         <TimePastIcon />
       </template>
     </DashboardIconItem>
+    <DashboardTitleItem
+      title="Employees Stats"
+      subtitle="New employees on 15th September, 2016"
+      color="warning"
+    >
+    </DashboardTitleItem>
   </main>
 </template>
 

@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { DashboardColorType } from '@/types/common';
 import Dashboard from '@/components/atoms/Dashboard';
-import { createLinearGradient } from '@/utils/createLinearGradient';
 
 interface Props {
   color: DashboardColorType;
+  title: string;
+  subtitle: string;
 }
 
 const { color } = defineProps<Props>();
@@ -14,7 +15,12 @@ const { color } = defineProps<Props>();
   <section class="dashboard-item">
     <div class="dashboard-item__wrapper">
       <Dashboard.TopSection :color="color" type="title">
-        <slot name="top"></slot>
+        <template #top>
+          <Dashboard.TitleTopSection
+            :title="title"
+            :subtitle="subtitle"
+          ></Dashboard.TitleTopSection>
+        </template>
       </Dashboard.TopSection>
 
       <div class="dashboard-item__bottom">
@@ -30,9 +36,9 @@ const { color } = defineProps<Props>();
   width: 100%;
 
   @media screen and (min-width: 1281px) {
-    max-width: 33.33333%;
-    min-width: 33.33333%;
-    flex: 33.3333%;
+    max-width: 50%;
+    min-width: 50%;
+    flex: 50%;
   }
 
   &__wrapper {
