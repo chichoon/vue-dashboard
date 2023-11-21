@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 
+import { vRipple } from '@/directives/vRipple';
 import { type TodoCategory, type TodoInjection } from '@/types/todo';
 import { TodoInjectionKey } from '@/injection/todo';
 
@@ -21,6 +22,7 @@ const { changeSelected } = inject(TodoInjectionKey) as TodoInjection;
         v-for="(category, index) in todoCategories"
         @click="() => changeSelected(index)"
         :key="category.title"
+        v-ripple
       >
         <component :is="category.icon" />
         <span>{{ category.title }}</span>
