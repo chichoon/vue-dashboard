@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DashboardColorType } from '@/types/common';
+import type { ColorType } from '@/types/common';
 import { createLinearGradient } from '@/utils/createLinearGradient';
 
 interface Props {
-  color: DashboardColorType;
+  color: ColorType;
   type: 'icon' | 'title' | 'graph';
 }
 

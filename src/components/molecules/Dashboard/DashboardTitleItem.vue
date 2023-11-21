@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DashboardColorType } from '@/types/common';
+import type { ColorType } from '@/types/common';
 import Dashboard from '@/components/atoms/Dashboard';
 
 interface Props {
-  color: DashboardColorType;
+  color: ColorType;
   title: string;
   subtitle: string;
 }
