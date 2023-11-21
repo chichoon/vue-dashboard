@@ -4,7 +4,8 @@ import { provide, ref } from 'vue';
 import Dashboard from '@/components/atoms/Dashboard';
 import { TodoInjectionKey } from '@/injection/todo';
 import type { DashboardColorType } from '@/types/common';
-import { TODO_LIST, TODO_CATEGORIES } from './constants';
+import { TODO_LIST, TODO_CATEGORIES } from '@/utils/constants';
+import TodoList from '../TodoList.vue';
 
 interface Props {
   color: DashboardColorType;
@@ -30,7 +31,7 @@ provide(TodoInjectionKey, { selected, changeSelected });
             <Dashboard.TodoTopSection :todoCategories="TODO_CATEGORIES" />
           </template>
         </Dashboard.TopSection>
-        <Dashboard.TodoMiddleSection :todoList="TODO_LIST" />
+        <TodoList :todoList="TODO_LIST" />
       </template>
     </Dashboard.WrapperSection>
   </section>

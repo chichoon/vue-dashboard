@@ -3,7 +3,7 @@ import { inject } from 'vue';
 
 import { type TodoInjection, type TodoType } from '@/types/todo';
 import { TodoInjectionKey } from '@/injection/todo';
-import TodoElement from './TodoElement.vue';
+import TodoElement from '../atoms/TodoElement.vue';
 
 interface Props {
   todoList: Record<string, TodoType[]>;

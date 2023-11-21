@@ -6,7 +6,6 @@ import TodoTopSection from './TodoTopSection.vue';
 
 import GraphMiddleSection from './GraphMiddleSection.vue';
 import IconMiddleSection from './IconMiddleSection.vue';
-import TodoMiddleSection from './TodoMiddleSection.vue';
 
 import BottomSection from './BottomSection.vue';
 
@@ -17,6 +16,5 @@ export default {
   TodoTopSection,
   GraphMiddleSection,
   IconMiddleSection,
-  TodoMiddleSection,
   BottomSection
 };

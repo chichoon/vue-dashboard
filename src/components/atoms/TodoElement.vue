@@ -3,7 +3,7 @@ import { ref } from 'vue';
 
 import { PencilIcon, CancelIcon } from '@/components/icons';
 import type { TodoType } from '@/types/todo';
-import CheckBox from '../CheckBox.vue';
+import CheckBox from './CheckBox.vue';
 
 interface Props {
   todo: TodoType;
@@ -43,7 +43,7 @@ const handleClickDone = () => {
 
   &--done,
   &:hover {
-    background-color: var(--border-color);
+    background-color: var(--black-transparent);
   }
 
   &:last-child {
