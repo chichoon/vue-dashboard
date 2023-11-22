@@ -20,7 +20,7 @@ const postalCodeRef = ref<string>(userInfo.value.postalCode ?? '');
 const bioRef = ref<string>(userInfo.value.bio);
 
 const handleSubmit = () => {
-  store.setUserInfo({
+  userInfoStore.setUserInfo({
     username: usernameRef.value,
     firstName: firstNameRef.value,
     lastName: lastNameRef.value,

@@ -8,7 +8,7 @@ const gnbOpenStore = useGNBOpen();
 const { isGNBOpen } = storeToRefs(gnbOpenStore);
 
 const handleToggleGNB = () => {
-  store.toggleGNBOpen();
+  gnbOpenStore.toggleGNBOpen();
 };
 </script>
 
