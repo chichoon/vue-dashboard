@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia';
 
 import { useUserInfo } from '@/stores/useUserInfo';
+import { vRipple } from '@/directives';
 import Dashboard from '@/components/atoms/Dashboard';
 
 const userInfoStore = useUserInfo();
