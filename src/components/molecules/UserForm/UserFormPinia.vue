@@ -38,8 +38,8 @@ const handleSubmit = () => {
 <template>
   <form @submit.prevent="handleSubmit" class="user-form">
     <fieldset class="user-form__fieldset">
-      <ev-text-field placeholder="Company (disabled)" v-model="companyRef" />
-      <ev-text-field placeholder="User Name" v-model="usernameRef" required />
+      <ev-text-field placeholder="Company (disabled)" v-model="companyRef" disabled />
+      <ev-text-field placeholder="User Name" v-model="usernameRef" />
       <ev-text-field placeholder="Email Address" v-model="emailRef" />
     </fieldset>
     <fieldset class="user-form__fieldset">
