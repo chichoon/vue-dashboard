@@ -3,6 +3,7 @@ import { storeToRefs } from 'pinia';
 
 import { useSettings } from '@/stores/useSettings';
 import type { GNBImageType } from '@/types/common';
+import SettingsSubText from './SettingsSubText.vue';
 
 const settingsStore = useSettings();
 const { settings } = storeToRefs(settingsStore);
@@ -11,7 +12,7 @@ const IMAGE_SET: GNBImageType[] = [1, 2, 3, 4];
 
 <template>
   <div class="background-selector">
-    <h5>images</h5>
+    <SettingsSubText text="images" />
     <div class="background-selector__image-wrapper">
       <button
         v-for="imageIndex in IMAGE_SET"
@@ -31,22 +32,13 @@ const IMAGE_SET: GNBImageType[] = [1, 2, 3, 4];
 .background-selector {
   padding: 5px 2px;
 
-  & > h5 {
-    text-align: center;
-    padding: 5px 2px;
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: var(--font-sm);
-    text-transform: uppercase;
-  }
-
   &__image-wrapper {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     padding: 5px 2px;
   }
 

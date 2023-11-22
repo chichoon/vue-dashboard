@@ -2,6 +2,7 @@
 import { useSettings } from '@/stores/useSettings';
 import type { ColorType } from '@/types/common';
 import { storeToRefs } from 'pinia';
+import { SettingsSubText } from '.';
 
 const settingsStore = useSettings();
 const { settings } = storeToRefs(settingsStore);
@@ -10,7 +11,7 @@ const COLOR_SET: ColorType[] = ['primary', 'info', 'success', 'warning', 'danger
 
 <template>
   <div class="color-selector">
-    <h5>sidebar filters</h5>
+    <SettingsSubText text="sidebar filters" />
     <div class="color-selector__button-wrapper">
       <button
         v-for="color in COLOR_SET"

@@ -132,6 +132,6 @@ const handleClickModalOpener = () => {
 
 .fade-down-enter-active,
 .fade-down-leave-active {
-  transition: all 0.1s ease-in;
+  transition: all 0.2s ease-in;
 }
 </style>
