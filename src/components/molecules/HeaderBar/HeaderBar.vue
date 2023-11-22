@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router';
 
 import SearchBar from '@/components/atoms/SearchBar.vue';
 import { DashboardIcon, BellIcon, UserIcon } from '@/components/icons';
-import { vRipple } from '@/directives/vRipple';
+import { vRipple } from '@/directives';
 import { TITLE_LIST } from './constants';
 import HamburgerButton from '@/components/atoms/HamburgerButton.vue';
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 
-import { vRipple } from '@/directives/vRipple';
+import { vRipple } from '@/directives';
 import { type TodoCategoryType, type TodoInjectionType } from '@/types/todo';
 import { TodoInjectionKey } from '@/injection/todo';
 

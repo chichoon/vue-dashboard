@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 
-import { vRipple } from '@/directives/vRipple';
+import { vRipple } from '@/directives';
 import { useUserInfo } from '@/stores/useUserInfo';
 
 const userInfoStore = useUserInfo();

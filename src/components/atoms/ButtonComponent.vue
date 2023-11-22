@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { vRipple } from '@/directives/vRipple';
+import { vRipple } from '@/directives';
 import type { ColorType } from '@/types/common';
 
 interface Props {

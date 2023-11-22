@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 
 import { store } from '@/store';
-import { vRipple } from '@/directives/vRipple';
+import { vRipple } from '@/directives';
 import Dashboard from '@/components/atoms/Dashboard';
 
 const userInfo = computed(() => store.getters['userModule/getUserInfo']);

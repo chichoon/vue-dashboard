@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { vRipple } from '@/directives/vRipple';
+import { vRipple } from '@/directives';
 import { store } from '@/store';
 
 const companyRef = ref<string>(store.getters['userModule/getUserInfo'].company);

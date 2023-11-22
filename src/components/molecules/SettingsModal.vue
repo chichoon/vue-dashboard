@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia';
 
 import { useSettingsModalOpen } from '@/stores/useSettingsModalOpen';
+import { vClickOutside } from '@/directives';
 import { TriangleIcon } from '../icons';
 import { ColorSelector } from '../atoms/Settings';
 
@@ -13,7 +14,11 @@ const { isSettingsModalOpen } = storeToRefs(modalOpenStore);
   <Teleport to="#modal">
     <transition>
       <!-- TODO: Transition -->
-      <div v-if="isSettingsModalOpen" class="settings-modal">
+      <div
+        v-if="isSettingsModalOpen"
+        class="settings-modal"
+        v-click-outside="modalOpenStore.closeSettingsModal"
+      >
         <div class="settings-modal__inner">
           <ColorSelector />
         </div>
