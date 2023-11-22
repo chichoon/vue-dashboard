@@ -17,7 +17,7 @@ import {
 } from '@/components/icons';
 import GridTable from '@/components/molecules/GridTable.vue';
 import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
-import { LineChart, BarChart } from '@/components/atoms/Charts';
+import { LineChart, BarChart, HeatMapChart } from '@/components/atoms/Charts';
 </script>
 
 <template>
@@ -29,12 +29,8 @@ import { LineChart, BarChart } from '@/components/atoms/Charts';
       color="info"
       bottom-text="updated 4 minutes ago"
     >
-      <template #top>
-        <LineChart />
-      </template>
-      <template #emphasis-icon>
-        <ArrowIcon />
-      </template>
+      <template #top><LineChart /></template>
+      <template #emphasis-icon><ArrowIcon /></template>
     </DashboardGraphItem>
     <DashboardGraphItem
       title="Email Subscription"
@@ -42,12 +38,8 @@ import { LineChart, BarChart } from '@/components/atoms/Charts';
       color="danger"
       bottom-text="updated 10 days ago"
     >
-      <template #top>
-        <BarChart />
-      </template>
-      <template #middle>
-        <span>Last Campaign Performance</span>
-      </template>
+      <template #top><BarChart /></template>
+      <template #middle><span>Last Campaign Performance</span></template>
     </DashboardGraphItem>
     <DashboardGraphItem
       title="Completed Tasks"
@@ -55,9 +47,7 @@ import { LineChart, BarChart } from '@/components/atoms/Charts';
       color="success"
       bottom-text="campaign sent 26 minutes ago"
     >
-      <template #top>
-        <div>Graph Goes here...</div>
-      </template>
+      <template #top><HeatMapChart /></template>
     </DashboardGraphItem>
     <DashboardIconItem
       title="Revenue"
