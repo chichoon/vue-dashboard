@@ -5,7 +5,7 @@ import { UserInfoPinia, UserInfoVuex } from '@/components/molecules/UserInfo';
 </script>
 
 <template>
-  <main class="user-view">
+  <div class="user-view">
     <div class="user-view__area">
       <DashboardTitleItem
         class="user-view__form"
@@ -32,7 +32,7 @@ import { UserInfoPinia, UserInfoVuex } from '@/components/molecules/UserInfo';
       </DashboardTitleItem>
       <UserInfoPinia />
     </div>
-  </main>
+  </div>
 </template>
 
 <style scoped lang="scss">

@@ -15,7 +15,11 @@ const { isGNBOpen } = storeToRefs(store);
     <GNB :class="['page__gnb', { 'page__gnb--open': isGNBOpen }]" />
     <div class="page__inner">
       <HeaderBar />
-      <RouterView />
+      <main class="page__container">
+        <transition name="fade" mode="out-in">
+          <RouterView />
+        </transition>
+      </main>
       <FooterBar />
     </div>
   </div>
@@ -35,6 +39,10 @@ const { isGNBOpen } = storeToRefs(store);
     background-color: var(--bg-primary);
   }
 
+  &__container {
+    flex: 1;
+  }
+
   &__gnb {
     margin-right: -260px;
     transition: margin 0.2s ease-in;
@@ -51,5 +59,18 @@ const { isGNBOpen } = storeToRefs(store);
       margin-right: 0;
     }
   }
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease-out;
 }
 </style>

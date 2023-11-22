@@ -21,7 +21,7 @@ import { LineChart, BarChart, HeatMapChart } from '@/components/atoms/Charts';
 </script>
 
 <template>
-  <main class="dashboard-view">
+  <div class="dashboard-view">
     <DashboardGraphItem
       title="Daily Sales"
       emphasis-text="55% "
@@ -112,7 +112,7 @@ import { LineChart, BarChart, HeatMapChart } from '@/components/atoms/Charts';
       </template>
     </DashboardTitleItem>
     <DashboardTodoItem color="success" />
-  </main>
+  </div>
 </template>
 
 <style scoped lang="scss">
