@@ -26,6 +26,7 @@ import TwitterIcon from './TwitterIcon.vue';
 import UploadIcon from './UploadIcon.vue';
 import UserIcon from './UserIcon.vue';
 import VueIcon from './VueIcon.vue';
+import TriangleIcon from './TriangleIcon.vue';
 
 export {
   AlertIcon,
@@ -55,5 +56,6 @@ export {
   TwitterIcon,
   UploadIcon,
   UserIcon,
-  VueIcon
+  VueIcon,
+  TriangleIcon
 };

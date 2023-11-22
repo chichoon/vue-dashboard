@@ -4,10 +4,14 @@ import { storeToRefs } from 'pinia';
 import GNB from './components/molecules/GNB';
 import HeaderBar from './components/molecules/HeaderBar';
 import { useGNBOpen } from './stores/useGNBOpen';
+import { useSettingsModalOpen } from './stores/useSettingsModalOpen';
 import FooterBar from './components/molecules/FooterBar.vue';
+import SettingsModal from './components/molecules/SettingsModal.vue';
+import { CogIcon } from './components/icons';
 
-const store = useGNBOpen();
-const { isGNBOpen } = storeToRefs(store);
+const gnbStore = useGNBOpen();
+const { openSettingsModal } = useSettingsModalOpen();
+const { isGNBOpen } = storeToRefs(gnbStore);
 </script>
 
 <template>
@@ -16,13 +20,17 @@ const { isGNBOpen } = storeToRefs(store);
     <div class="page__inner">
       <HeaderBar />
       <main class="page__container">
-        <transition name="fade" mode="out-in">
-          <RouterView />
-        </transition>
+        <button class="page__settings-float" @click="openSettingsModal"><CogIcon /></button>
+        <RouterView v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </RouterView>
       </main>
       <FooterBar />
     </div>
   </div>
+  <SettingsModal />
 </template>
 
 <style scoped lang="scss">
@@ -41,6 +49,31 @@ const { isGNBOpen } = storeToRefs(store);
 
   &__container {
     flex: 1;
+    position: relative;
+  }
+
+  &__settings-float {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 100px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    right: 0;
+    z-index: 5;
+    padding: 5px 5px 5px 20px;
+    background-color: var(--black-transparent-deep);
+
+    & > svg {
+      width: 40px;
+      height: 40px;
+      color: var(--white);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__gnb {
