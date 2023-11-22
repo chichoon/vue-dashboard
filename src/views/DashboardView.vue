@@ -17,7 +17,7 @@ import {
 } from '@/components/icons';
 import GridTable from '@/components/molecules/GridTable.vue';
 import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
-import LineChart from '@/components/atoms/Charts/LineChart.vue';
+import { LineChart, BarChart } from '@/components/atoms/Charts';
 </script>
 
 <template>
@@ -43,7 +43,7 @@ import LineChart from '@/components/atoms/Charts/LineChart.vue';
       bottom-text="updated 10 days ago"
     >
       <template #top>
-        <div>Graph Goes here...</div>
+        <BarChart />
       </template>
       <template #middle>
         <span>Last Campaign Performance</span>
