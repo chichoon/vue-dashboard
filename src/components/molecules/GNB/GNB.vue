@@ -42,7 +42,7 @@ import SearchBar from '@/components/atoms/SearchBar.vue';
   width: 260px;
   height: 100vh;
   position: relative;
-  background-image: url(/sidebar-2.jpg);
+  background-image: url(/sidebar_2.jpg);
   background-size: cover;
   background-position: 50%;
 
