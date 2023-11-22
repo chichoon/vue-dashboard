@@ -1,39 +1,23 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
-
-import { useSettingsModalOpen } from '@/stores/useSettingsModalOpen';
-import { vClickOutside } from '@/directives';
 import { TriangleIcon } from '../icons';
 import { ColorSelector } from '../atoms/Settings';
-
-const modalOpenStore = useSettingsModalOpen();
-const { isSettingsModalOpen } = storeToRefs(modalOpenStore);
 </script>
 
 <template>
-  <Teleport to="#modal">
-    <transition>
-      <!-- TODO: Transition -->
-      <div
-        v-if="isSettingsModalOpen"
-        class="settings-modal"
-        v-click-outside="modalOpenStore.closeSettingsModal"
-      >
-        <div class="settings-modal__inner">
-          <ColorSelector />
-        </div>
-        <TriangleIcon />
-      </div>
-    </transition>
-  </Teleport>
+  <div class="settings-modal">
+    <div class="settings-modal__inner">
+      <ColorSelector />
+    </div>
+    <TriangleIcon />
+  </div>
 </template>
 
 <style scoped lang="scss">
 .settings-modal {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: row;
-  top: 80px;
+  top: 10px;
   right: 60px;
   z-index: 5;
 

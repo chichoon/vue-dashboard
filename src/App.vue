@@ -1,17 +1,26 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 
 import GNB from './components/molecules/GNB';
 import HeaderBar from './components/molecules/HeaderBar';
-import { useGNBOpen } from './stores/useGNBOpen';
-import { useSettingsModalOpen } from './stores/useSettingsModalOpen';
 import FooterBar from './components/molecules/FooterBar.vue';
 import SettingsModal from './components/molecules/SettingsModal.vue';
+import { vClickOutside } from './directives';
+import { useGNBOpen } from './stores/useGNBOpen';
 import { CogIcon } from './components/icons';
 
 const gnbStore = useGNBOpen();
-const { openSettingsModal } = useSettingsModalOpen();
 const { isGNBOpen } = storeToRefs(gnbStore);
+const isModalOpen = ref<boolean>(false);
+
+const handleClickModalOutside = () => {
+  isModalOpen.value = false;
+};
+
+const handleClickModalOpener = () => {
+  isModalOpen.value = !isModalOpen.value;
+};
 </script>
 
 <template>
@@ -20,7 +29,14 @@ const { isGNBOpen } = storeToRefs(gnbStore);
     <div class="page__inner">
       <HeaderBar />
       <main class="page__container">
-        <button class="page__settings-float" @click="openSettingsModal"><CogIcon /></button>
+        <div class="page__settings-modal" v-click-outside="handleClickModalOutside">
+          <button class="page__settings-float" @click="handleClickModalOpener">
+            <CogIcon />
+          </button>
+          <transition name="fade-down" mode="in-out">
+            <SettingsModal v-if="isModalOpen" />
+          </transition>
+        </div>
         <RouterView v-slot="{ Component }">
           <transition name="fade" mode="out-in">
             <component :is="Component" />
@@ -30,7 +46,6 @@ const { isGNBOpen } = storeToRefs(gnbStore);
       <FooterBar />
     </div>
   </div>
-  <SettingsModal />
 </template>
 
 <style scoped lang="scss">
@@ -49,6 +64,10 @@ const { isGNBOpen } = storeToRefs(gnbStore);
 
   &__container {
     flex: 1;
+    position: relative;
+  }
+
+  &__settings-modal {
     position: relative;
   }
 
@@ -94,16 +113,24 @@ const { isGNBOpen } = storeToRefs(gnbStore);
   }
 }
 
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter {
+.fade-leave-to,
+.fade-enter-from {
   opacity: 0;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.1s ease-out;
+}
+
+.fade-down-leave-to,
+.fade-down-enter-from {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+  transition: all 0.1s ease-in;
 }
 </style>
