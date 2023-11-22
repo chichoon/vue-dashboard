@@ -15,8 +15,7 @@ const countryRef = ref<string>(store.getters['userModule/getUserInfo'].country);
 const postalCodeRef = ref<string>(store.getters['userModule/getUserInfo'].postalCode);
 const bioRef = ref<string>(store.getters['userModule/getUserInfo'].bio);
 
-const handleSubmit = (e: Event) => {
-  e.preventDefault();
+const handleSubmit = () => {
   store.commit('userModule/setUserInfo', {
     username: usernameRef.value,
     firstName: firstNameRef.value,
@@ -33,7 +32,7 @@ const handleSubmit = (e: Event) => {
 </script>
 
 <template>
-  <form @submit="handleSubmit" class="user-form">
+  <form @submit.prevent="handleSubmit" class="user-form">
     <fieldset class="user-form__fieldset">
       <ev-text-field placeholder="Company (disabled)" v-model="companyRef" />
       <ev-text-field placeholder="User Name" v-model="usernameRef" required />
