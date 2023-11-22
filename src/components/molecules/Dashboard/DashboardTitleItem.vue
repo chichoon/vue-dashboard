@@ -66,6 +66,8 @@ const { color } = defineProps<Props>();
     background-color: var(--white);
     padding: 15px;
     border-radius: 3px;
+    width: 100%;
+    overflow-x: scroll;
   }
 }
 </style>

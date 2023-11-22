@@ -33,9 +33,11 @@ const { changeSelected } = inject(TodoInjectionKey) as TodoInjection;
 
 <style scoped lang="scss">
 .dashboard-title {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  overflow-x: scroll;
   color: var(--white);
 
   & > span {
