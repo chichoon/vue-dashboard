@@ -5,8 +5,8 @@ import { storeToRefs } from 'pinia';
 import { vRipple } from '@/directives/vRipple';
 import { useUserInfo } from '@/stores/useUserInfo';
 
-const store = useUserInfo();
-const { userInfo } = storeToRefs(store);
+const userInfoStore = useUserInfo();
+const { userInfo } = storeToRefs(userInfoStore);
 
 const companyRef = ref<string>(userInfo.value.company ?? '');
 const usernameRef = ref<string>(userInfo.value.username);

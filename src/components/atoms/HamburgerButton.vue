@@ -4,8 +4,8 @@ import { storeToRefs } from 'pinia';
 import { CancelIcon, HamburgerIcon } from '@/components/icons';
 import { useGNBOpen } from '@/stores/useGNBOpen';
 
-const store = useGNBOpen();
-const { isGNBOpen } = storeToRefs(store);
+const gnbOpenStore = useGNBOpen();
+const { isGNBOpen } = storeToRefs(gnbOpenStore);
 
 const handleToggleGNB = () => {
   store.toggleGNBOpen();

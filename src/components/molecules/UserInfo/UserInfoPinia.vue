@@ -4,8 +4,8 @@ import { storeToRefs } from 'pinia';
 import { useUserInfo } from '@/stores/useUserInfo';
 import Dashboard from '@/components/atoms/Dashboard';
 
-const store = useUserInfo();
-const { userInfo } = storeToRefs(store);
+const userInfoStore = useUserInfo();
+const { userInfo } = storeToRefs(userInfoStore);
 </script>
 
 <template>
