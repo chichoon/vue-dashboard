@@ -16,7 +16,8 @@ import {
   TwitterIcon
 } from '@/components/icons';
 import GridTable from '@/components/molecules/GridTable.vue';
-import { TABLE_HEADERS, TABLE_DATA } from '@/utils/constants';
+import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
+import LineChart from '@/components/atoms/Charts/LineChart.vue';
 </script>
 
 <template>
@@ -29,7 +30,7 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/constants';
       bottom-text="updated 4 minutes ago"
     >
       <template #top>
-        <div>Graph Goes here...</div>
+        <LineChart />
       </template>
       <template #emphasis-icon>
         <ArrowIcon />

@@ -4,7 +4,7 @@ import { provide, ref } from 'vue';
 import Dashboard from '@/components/atoms/Dashboard';
 import { TodoInjectionKey } from '@/injection/todo';
 import type { ColorType } from '@/types/common';
-import { TODO_LIST, TODO_CATEGORIES } from '@/utils/constants';
+import { TODO_LIST, TODO_CATEGORIES } from '@/utils/todo.constant';
 import TodoList from '../TodoList.vue';
 
 interface Props {

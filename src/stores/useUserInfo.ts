@@ -1,5 +1,5 @@
 import type { UserType } from '@/types/user';
-import { INIT_USER_PINIA } from '@/utils/constants';
+import { INIT_USER_PINIA } from '@/utils/user.constant';
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 

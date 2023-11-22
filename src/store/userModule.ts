@@ -1,5 +1,5 @@
 import type { UserType } from '@/types/user';
-import { INIT_USER_VUEX } from '@/utils/constants';
+import { INIT_USER_VUEX } from '@/utils/user.constant';
 
 export const userModule = {
   namespaced: true,

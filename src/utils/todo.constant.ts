@@ -1,6 +1,5 @@
-import type { TableData } from '@/types/table';
+import type { TodoCategoryType, TodoType } from '@/types/todo';
 import { BugIcon, CloudIcon, CodeIcon } from '@/components/icons';
-import type { TodoCategory, TodoType } from '@/types/todo';
 
 export const TODO_LIST: Record<string, TodoType[]> = {
   bugs: [
@@ -50,45 +49,8 @@ export const TODO_LIST: Record<string, TodoType[]> = {
   ]
 };
 
-export const TODO_CATEGORIES: TodoCategory[] = [
+export const TODO_CATEGORIES: TodoCategoryType[] = [
   { icon: BugIcon, title: 'Bugs' },
   { icon: CodeIcon, title: 'Website' },
   { icon: CloudIcon, title: 'Server' }
 ];
-
-export const TABLE_DATA: TableData[] = [
-  { id: 1, name: 'Dakota Rice', salary: 36738, country: 'Niger', city: 'Oud-Turnhout' },
-  { id: 2, name: 'Minerva Hooper', salary: 23738, country: 'Curaçao', city: 'Sinaai-Waas' },
-  { id: 3, name: 'Sage Rodriguez', salary: 56142, country: 'Netherlands', city: 'Baileux' },
-  { id: 4, name: 'Philip Chaney', salary: 38735, country: 'Korea, South', city: 'Gloucester' },
-  { id: 5, name: 'Doris Greene', salary: 63542, country: 'Malawi', city: 'Feldkirchen in Kärnten' },
-  { id: 6, name: 'Mason Porter', salary: 78615, country: 'Chile', city: 'Gloucester' }
-];
-
-export const TABLE_HEADERS = ['id', 'name', 'salary', 'country', 'city'];
-
-export const INIT_USER_VUEX = {
-  username: 'polite_cat_123',
-  firstName: 'polite',
-  lastName: 'cat',
-  bio: 'hello',
-  address: '',
-  city: '',
-  country: '',
-  postalCode: '',
-  email: '',
-  company: ''
-};
-
-export const INIT_USER_PINIA = {
-  username: 'sad_cat_456',
-  firstName: 'sad',
-  lastName: 'cat',
-  bio: 'byebye',
-  address: '',
-  city: '',
-  country: '',
-  postalCode: '',
-  email: '',
-  company: ''
-};
