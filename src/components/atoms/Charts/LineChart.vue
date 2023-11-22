@@ -6,9 +6,8 @@ import type { ChartDataType } from '@/types/chart';
 import { CHART_OPTIONS, INIT_CHART } from '@/utils/lineChart.constant';
 
 const chartData = ref<ChartDataType>(INIT_CHART);
-
 const series1Data = toRef<number[]>(chartData.value.data.series1);
-const labels = toRef<Dayjs[]>(chartData.value.labels);
+const labels = toRef<Dayjs[]>(chartData.value.labels as Dayjs[]);
 const intervalID = ref<number>(-1);
 const timeValue = ref<Dayjs>(dayjs());
 
