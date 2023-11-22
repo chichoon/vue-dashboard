@@ -1,10 +1,10 @@
 import type { UserType } from '@/types/user';
-import { INIT_USER } from '@/utils/constants';
+import { INIT_USER_VUEX } from '@/utils/constants';
 
 export const userModule = {
   namespaced: true,
   state: {
-    userInfo: INIT_USER
+    userInfo: INIT_USER_VUEX
   },
   getters: {
     getUserInfo(state: { userInfo: UserType }) {

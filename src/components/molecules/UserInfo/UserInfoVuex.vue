@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 
 import { store } from '@/store';
 import { vRipple } from '@/directives/vRipple';
 import Dashboard from '@/components/atoms/Dashboard';
 
-const data = computed(() => store.getters['userModule/getUserInfo']);
-
-watch(data, () => {
-  console.log(data);
-});
+const userInfo = computed(() => store.getters['userModule/getUserInfo']);
 </script>
 
 <template>
@@ -18,9 +14,9 @@ watch(data, () => {
       <template #inner>
         <img src="/polite_cat.webp" alt="polite cat" class="user-info__image" />
         <div class="user-info__bottom">
-          <span>{{ data.username }}</span>
-          <h4>{{ data.firstName }} {{ data.lastName }}</h4>
-          <p>{{ data.bio }}</p>
+          <span>{{ userInfo.username }}</span>
+          <h4>{{ userInfo.firstName }} {{ userInfo.lastName }}</h4>
+          <p>{{ userInfo.bio }}</p>
           <ev-button type="primary" shape="radius" v-ripple>Follow</ev-button>
         </div>
       </template>
@@ -43,6 +39,7 @@ watch(data, () => {
   &__image {
     width: 120px;
     height: 120px;
+    object-fit: cover;
     border-radius: 80px;
     z-index: 2;
     margin: -50px auto 0;

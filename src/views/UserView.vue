@@ -1,30 +1,50 @@
 <script setup lang="ts">
 import { DashboardTitleItem } from '@/components/molecules/Dashboard';
-import { UserFormVuex } from '@/components/molecules/UserForm';
-import { UserInfoVuex } from '@/components/molecules/UserInfo';
+import { UserFormPinia, UserFormVuex } from '@/components/molecules/UserForm';
+import { UserInfoPinia, UserInfoVuex } from '@/components/molecules/UserInfo';
 </script>
 
 <template>
   <main class="user-view">
-    <DashboardTitleItem
-      class="user-view__form"
-      color="success"
-      title="Edit Profile With Vuex"
-      subtitle="Complete your profile"
-    >
-      <template #bottom>
-        <UserFormVuex />
-      </template>
-    </DashboardTitleItem>
-    <UserInfoVuex />
+    <div class="user-view__area">
+      <DashboardTitleItem
+        class="user-view__form"
+        color="success"
+        title="Edit Profile With Vuex"
+        subtitle="Complete your profile"
+      >
+        <template #bottom>
+          <UserFormVuex />
+        </template>
+      </DashboardTitleItem>
+      <UserInfoVuex />
+    </div>
+    <div class="user-view__area">
+      <DashboardTitleItem
+        class="user-view__form"
+        color="info"
+        title="Edit Profile With Pinia"
+        subtitle="Complete your profile"
+      >
+        <template #bottom>
+          <UserFormPinia />
+        </template>
+      </DashboardTitleItem>
+      <UserInfoPinia />
+    </div>
   </main>
 </template>
 
 <style scoped lang="scss">
 .user-view {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
   padding: 30px 15px;
+
+  &__area {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   @media screen and (min-width: 1281px) {
     &__form {
