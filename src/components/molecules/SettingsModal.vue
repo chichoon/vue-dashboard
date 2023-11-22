@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { TriangleIcon } from '../icons';
 import { ColorSelector } from '../atoms/Settings';
+import BackgroundSelector from '../atoms/Settings/BackgroundSelector.vue';
 </script>
 
 <template>
   <div class="settings-modal">
     <div class="settings-modal__inner">
       <ColorSelector />
+      <BackgroundSelector />
     </div>
     <TriangleIcon />
   </div>

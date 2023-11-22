@@ -115,6 +115,7 @@ const handleClickModalOpener = () => {
 
 .fade-leave-to,
 .fade-enter-from {
+  // Vue 3부터는 enter-from 과 leave-to 사용
   opacity: 0;
 }
 

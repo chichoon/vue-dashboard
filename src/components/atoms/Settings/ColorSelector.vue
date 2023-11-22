@@ -11,7 +11,7 @@ const COLOR_SET: ColorType[] = ['primary', 'info', 'success', 'warning', 'danger
 <template>
   <div class="color-selector">
     <h5>sidebar filters</h5>
-    <div class>
+    <div class="color-selector__button-wrapper">
       <button
         v-for="color in COLOR_SET"
         :key="color"
@@ -37,6 +37,7 @@ const COLOR_SET: ColorType[] = ['primary', 'info', 'success', 'warning', 'danger
   border-bottom: 1px solid var(--border-color);
 
   & > h5 {
+    text-align: center;
     padding: 5px 2px;
     font-weight: 600;
     color: var(--text-primary);
@@ -44,13 +45,22 @@ const COLOR_SET: ColorType[] = ['primary', 'info', 'success', 'warning', 'danger
     text-transform: uppercase;
   }
 
+  &__button-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 2px;
+  }
+
   &__button {
-    border: none;
-    width: 20px;
-    height: 20px;
+    border: 3px solid var(--white);
+    width: 23px;
+    height: 23px;
     padding: 0;
     border-radius: 20px;
-    border: 3px solid var(--white);
     transition: border-color 0.2s ease-in;
     cursor: pointer;
 

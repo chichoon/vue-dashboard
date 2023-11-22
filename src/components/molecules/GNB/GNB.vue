@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import NavigationElement from '@/components/atoms/NavigationElement.vue';
-import { VueIcon, UploadIcon } from '@/components/icons';
-import { NAV_LIST } from './constants';
 import SearchBar from '@/components/atoms/SearchBar.vue';
+import { VueIcon, UploadIcon } from '@/components/icons';
+import { useSettings } from '@/stores/useSettings';
+import { NAV_LIST } from './constants';
+import { storeToRefs } from 'pinia';
+
+const settingsStore = useSettings();
+const { settings } = storeToRefs(settingsStore);
 </script>
 
 <template>
-  <div class="gnb">
+  <div class="gnb" :style="`background-image: url(/sidebar_${settings.image}.jpg);`">
     <div class="gnb__inner">
       <a href="https://github.com/chichoon" target="_blank" noreferrer class="gnb__title">
         <div class="gnb__vue-icon">
@@ -42,7 +47,6 @@ import SearchBar from '@/components/atoms/SearchBar.vue';
   width: 260px;
   height: 100vh;
   position: relative;
-  background-image: url(/sidebar_2.jpg);
   background-size: cover;
   background-position: 50%;
 
