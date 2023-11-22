@@ -1,5 +1,5 @@
 import type { InjectionKey } from 'vue';
 
-import type { TodoInjection } from '@/types/todo';
+import type { TodoInjectionType } from '@/types/todo';
 
-export const TodoInjectionKey: InjectionKey<TodoInjection> = Symbol('todo-value');
+export const TodoInjectionKey: InjectionKey<TodoInjectionType> = Symbol('todo-value');

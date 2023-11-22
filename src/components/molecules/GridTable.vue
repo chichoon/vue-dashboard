@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { ColorType } from '@/types/common';
-import type { TableData } from '@/types/table';
+import type { TableDataType } from '@/types/table';
 
 interface Props {
   color: ColorType;
-  tableData: TableData[];
+  tableData: TableDataType[];
   tableHeadings: string[];
 }
 

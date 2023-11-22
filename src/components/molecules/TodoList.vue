@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 
-import { type TodoInjection, type TodoType } from '@/types/todo';
+import { type TodoInjectionType, type TodoType } from '@/types/todo';
 import { TodoInjectionKey } from '@/injection/todo';
 import TodoElement from '../atoms/TodoElement.vue';
 
@@ -11,7 +11,7 @@ interface Props {
 
 defineProps<Props>();
 
-const { selected } = inject(TodoInjectionKey) as TodoInjection; // TODO: 타입 단언을 피할 수 있는 방법이 있을까?
+const { selected } = inject(TodoInjectionKey) as TodoInjectionType; // TODO: 타입 단언을 피할 수 있는 방법이 있을까?
 </script>
 
 <template>

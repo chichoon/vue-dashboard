@@ -1,4 +1,4 @@
-export interface TableData {
+export interface TableDataType {
   id: number;
   name: string;
   salary: number;

@@ -2,16 +2,16 @@
 import { inject } from 'vue';
 
 import { vRipple } from '@/directives/vRipple';
-import { type TodoCategory, type TodoInjection } from '@/types/todo';
+import { type TodoCategoryType, type TodoInjectionType } from '@/types/todo';
 import { TodoInjectionKey } from '@/injection/todo';
 
 interface Props {
-  todoCategories: TodoCategory[];
+  todoCategories: TodoCategoryType[];
 }
 
 defineProps<Props>();
 
-const { changeSelected } = inject(TodoInjectionKey) as TodoInjection;
+const { changeSelected } = inject(TodoInjectionKey) as TodoInjectionType;
 </script>
 
 <template>
