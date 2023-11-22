@@ -1,19 +1,8 @@
 import type { UserType } from '@/types/user';
-
-const INIT_USER = {
-  username: '',
-  firstName: '',
-  lastName: '',
-  bio: '',
-  address: '',
-  city: '',
-  country: '',
-  postalCode: '',
-  email: '',
-  company: ''
-};
+import { INIT_USER } from '@/utils/constants';
 
 export const userModule = {
+  namespaced: true,
   state: {
     userInfo: INIT_USER
   },

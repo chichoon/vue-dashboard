@@ -66,3 +66,16 @@ export const TABLE_DATA: TableData[] = [
 ];
 
 export const TABLE_HEADERS = ['id', 'name', 'salary', 'country', 'city'];
+
+export const INIT_USER = {
+  username: 'polite_cat_123',
+  firstName: 'polite',
+  lastName: 'cat',
+  bio: 'hello',
+  address: '',
+  city: '',
+  country: '',
+  postalCode: '',
+  email: '',
+  company: ''
+};

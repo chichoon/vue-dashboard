@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DashboardTitleItem } from '@/components/molecules/Dashboard';
-import UserForm from '@/components/molecules/UserFormVuex.vue.js';
+import { UserFormVuex } from '@/components/molecules/UserForm';
+import { UserInfoVuex } from '@/components/molecules/UserInfo';
 </script>
 
 <template>
@@ -12,9 +13,10 @@ import UserForm from '@/components/molecules/UserFormVuex.vue.js';
       subtitle="Complete your profile"
     >
       <template #bottom>
-        <UserForm />
+        <UserFormVuex />
       </template>
     </DashboardTitleItem>
+    <UserInfoVuex />
   </main>
 </template>
 
