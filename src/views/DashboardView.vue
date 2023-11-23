@@ -9,6 +9,7 @@ import {
   AlertIcon,
   ArrowIcon,
   CalendarIcon,
+  CopyIcon,
   InfoIcon,
   LabelIcon,
   StoreIcon,
@@ -69,7 +70,7 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
       color="warning"
     >
       <template #top-icon>
-        <InfoIcon />
+        <CopyIcon />
       </template>
       <template #bottom-icon>
         <AlertIcon />
