@@ -13,7 +13,7 @@ const { userInfo } = storeToRefs(userInfoStore);
   <section class="user-info">
     <Dashboard.WrapperSection type="title">
       <template #inner>
-        <img src="/crying_cat.jpg" alt="cryibg cat" class="user-info__image" />
+        <img src="/crying_cat.jpg" alt="crying cat" class="user-info__image" />
         <div class="user-info__bottom">
           <span>{{ userInfo.username }}</span>
           <h4>{{ userInfo.firstName }} {{ userInfo.lastName }}</h4>

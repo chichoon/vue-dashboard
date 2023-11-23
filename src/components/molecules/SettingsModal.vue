@@ -62,3 +62,9 @@ import ButtonComponent from '../atoms/ButtonComponent.vue';
   }
 }
 </style>
+
+<style lang="scss">
+.settings-modal__button-wrapper > button > span {
+  font-size: var(--font-sm) !important;
+}
+</style>
