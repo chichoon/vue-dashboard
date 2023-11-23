@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
+
 import NavigationElement from '@/components/atoms/NavigationElement.vue';
 import SearchBar from '@/components/atoms/SearchBar.vue';
 import { VueIcon, UploadIcon } from '@/components/icons';
 import { useSettings } from '@/stores/useSettings';
 import { NAV_LIST } from './constants';
-import { storeToRefs } from 'pinia';
 
 const settingsStore = useSettings();
 const { settings } = storeToRefs(settingsStore);
