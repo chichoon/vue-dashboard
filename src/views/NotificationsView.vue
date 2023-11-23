@@ -117,7 +117,10 @@ import { DashboardTitleItem } from '@/components/molecules/Dashboard';
   &__wrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+
+    & > div {
+      margin-bottom: 20px;
+    }
   }
 }
 </style>
