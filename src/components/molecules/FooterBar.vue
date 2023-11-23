@@ -25,6 +25,7 @@ import { HeartIcon } from '../icons';
   display: flex;
   flex-direction: column;
   padding: 15px 30px;
+  border-top: 1px solid var(--border-color);
 
   @media screen and (min-width: 1025px) {
     flex-direction: row;
