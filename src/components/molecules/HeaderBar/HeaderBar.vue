@@ -2,12 +2,16 @@
 import { useRoute } from 'vue-router';
 
 import SearchBar from '@/components/atoms/SearchBar.vue';
-import { DashboardIcon, BellIcon, UserIcon } from '@/components/icons';
-import { vRipple } from '@/directives';
-import { TITLE_LIST } from './constants';
 import HamburgerButton from '@/components/atoms/HamburgerButton.vue';
+import { DashboardIcon, BellIcon, UserIcon } from '@/components/icons';
+import { useModal } from '@/composables';
+import { vRipple } from '@/directives';
+import { vClickOutside } from '@/directives';
+import { TITLE_LIST } from './constants';
+import NotificationModal from '../NotificationModal.vue';
 
 const route = useRoute();
+const { isModalOpen, handleClickModalOpener, handleClickModalOutside } = useModal();
 </script>
 
 <template>
@@ -21,12 +25,20 @@ const route = useRoute();
         <RouterLink class="header__icon" to="/dashboard" v-ripple="'333333'">
           <DashboardIcon />
         </RouterLink>
-        <RouterLink class="header__icon" to="/notifications" v-ripple="'333333'">
+        <RouterLink
+          class="header__icon"
+          to="/notifications"
+          v-ripple="'333333'"
+          @click="handleClickModalOpener"
+        >
           <BellIcon />
         </RouterLink>
         <RouterLink class="header__icon" to="/user" v-ripple="'333333'">
           <UserIcon />
         </RouterLink>
+        <transition name="fade-down" mode="in-out">
+          <NotificationModal v-if="isModalOpen" v-click-outside="handleClickModalOutside" />
+        </transition>
       </div>
     </div>
     <HamburgerButton class="header__hamburger" v-ripple="'333333'" />
@@ -39,6 +51,7 @@ const route = useRoute();
   flex-direction: row;
   align-items: center;
   padding: 10px 15px;
+  position: relative;
 
   &__left-section {
     flex: 1;
@@ -113,5 +126,16 @@ const route = useRoute();
       display: none;
     }
   }
+}
+
+.fade-down-leave-to,
+.fade-down-enter-from {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+  transition: all 0.2s ease-in;
 }
 </style>

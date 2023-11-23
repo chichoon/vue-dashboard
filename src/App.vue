@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 
 import GNB from './components/molecules/GNB';
@@ -9,18 +8,11 @@ import SettingsModal from './components/molecules/SettingsModal.vue';
 import { vClickOutside } from './directives';
 import { useGNBOpen } from './stores/useGNBOpen';
 import { CogIcon } from './components/icons';
+import { useModal } from './composables';
 
 const gnbStore = useGNBOpen();
 const { isGNBOpen } = storeToRefs(gnbStore);
-const isModalOpen = ref<boolean>(false);
-
-const handleClickModalOutside = () => {
-  isModalOpen.value = false;
-};
-
-const handleClickModalOpener = () => {
-  isModalOpen.value = !isModalOpen.value;
-};
+const { isModalOpen, handleClickModalOpener, handleClickModalOutside } = useModal();
 </script>
 
 <template>
