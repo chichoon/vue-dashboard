@@ -18,10 +18,5 @@ export const TABLE_HEADERS: TableHeadersType[] = [
 ];
 
 export const TABLE_OPTIONS = {
-  adjust: true,
-  // columnWidth: 200,
-  useCheckbox: {
-    use: true,
-    mode: 'multi'
-  }
+  adjust: true
 };
