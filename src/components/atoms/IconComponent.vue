@@ -14,7 +14,7 @@ defineProps<Props>();
 <template>
   <div class="icon">
     <component :is="icon" />
-    <TextComponent :text="name" size="md" color="secondary" />
+    <TextComponent :text="name" color="secondary" />
   </div>
 </template>
 

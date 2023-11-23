@@ -3,8 +3,10 @@ import type { ColorType, FontSizeType } from '@/types/common';
 
 interface Props {
   text: string;
-  size: FontSizeType;
-  color?: ColorType | 'secondary' | 'ternary';
+  size?: FontSizeType;
+  color?: ColorType | 'secondary' | 'ternary' | 'white';
+  weight?: 'light' | 'bold';
+  isUpper?: boolean;
 }
 
 defineProps<Props>();
@@ -16,7 +18,6 @@ defineProps<Props>();
       'text',
       { 'text--xs': size === 'xs' },
       { 'text--sm': size === 'sm' },
-      { 'text--md': size === 'md' },
       { 'text--lg': size === 'lg' },
       { 'text--xl': size === 'xl' },
       { 'text--xxl': size === 'xxl' },
@@ -26,7 +27,11 @@ defineProps<Props>();
       { 'text--danger': color === 'danger' },
       { 'text--primary': color === 'primary' },
       { 'text--secondary': color === 'secondary' },
-      { 'text--ternary': color === 'ternary' }
+      { 'text--ternary': color === 'ternary' },
+      { 'text--white': color === 'white' },
+      { 'text--upper': isUpper },
+      { 'text--light': weight === 'light' },
+      { 'text--bold': weight === 'bold' }
     ]"
     >{{ text }}</span
   >
@@ -35,6 +40,8 @@ defineProps<Props>();
 <style scoped lang="scss">
 .text {
   color: var(--text-primary);
+  font-weight: 500;
+  font-size: var(--font-md);
 
   &--xs {
     font-size: var(--font-xs);
@@ -42,10 +49,6 @@ defineProps<Props>();
 
   &--sm {
     font-size: var(--font-sm);
-  }
-
-  &--md {
-    font-size: var(--font-md);
   }
 
   &--lg {
@@ -86,6 +89,22 @@ defineProps<Props>();
 
   &--ternary {
     color: var(--text-ternary);
+  }
+
+  &--white {
+    color: var(--white);
+  }
+
+  &--upper {
+    text-transform: uppercase;
+  }
+
+  &--light {
+    font-weight: 300;
+  }
+
+  &--bold {
+    font-weight: 700;
   }
 }
 </style>

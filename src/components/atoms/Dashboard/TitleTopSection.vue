@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TextComponent from '../TextComponent.vue';
+
 interface Props {
   title: string;
   subtitle: string;
@@ -9,22 +11,21 @@ defineProps<Props>();
 
 <template>
   <div class="dashboard-title">
-    <h3>{{ title }}</h3>
-    <span>{{ subtitle }}</span>
+    <TextComponent :text="title" color="white" size="xl" />
+    <TextComponent :text="subtitle" color="white" />
   </div>
 </template>
 
 <style scoped lang="scss">
 .dashboard-title {
-  color: var(--white);
+  display: flex;
+  flex-direction: column;
 
-  & > h3 {
-    font-size: var(--font-xl);
+  & > span:first-child {
     margin-bottom: 5px;
   }
 
-  & > span {
-    font-size: var(--font-md);
+  & > span:last-child {
     opacity: 0.8;
   }
 }

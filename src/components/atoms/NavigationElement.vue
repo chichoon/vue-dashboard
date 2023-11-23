@@ -3,6 +3,7 @@ import { storeToRefs } from 'pinia';
 import { RouterLink, useRoute } from 'vue-router';
 
 import { useSettings } from '@/stores/useSettings';
+import TextComponent from './TextComponent.vue';
 
 interface Props {
   text: string;
@@ -30,7 +31,7 @@ const { settings } = storeToRefs(settingsStore);
       ]"
     >
       <slot />
-      <span>{{ text }}</span>
+      <TextComponent :text="text" color="ternary" />
     </RouterLink>
   </li>
 </template>
@@ -53,7 +54,6 @@ const { settings } = storeToRefs(settingsStore);
 
     & > span {
       margin-left: 15px;
-      font-size: var(--font-md);
     }
 
     &:hover {

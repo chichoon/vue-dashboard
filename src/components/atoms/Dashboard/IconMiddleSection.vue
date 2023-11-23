@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TextComponent from '../TextComponent.vue';
+
 interface Props {
   title: string;
   textPrimary: string;
@@ -10,10 +12,10 @@ defineProps<Props>();
 
 <template>
   <div class="dashboard-middle">
-    <h4>{{ title }}</h4>
+    <TextComponent class="dashboard-middle__title" :text="title" color="secondary" />
     <div class="dashboard-middle__text">
-      <span>{{ textPrimary }}</span>
-      <span v-if="!!textSecondary">{{ textSecondary }}</span>
+      <TextComponent weight="light" :text="textPrimary" size="xxl" />
+      <TextComponent v-if="!!textSecondary" :text="textSecondary" size="lg" />
     </div>
   </div>
 </template>
@@ -25,25 +27,16 @@ defineProps<Props>();
   padding: 15px 20px;
   height: 84px;
 
-  & > h4 {
+  &__title {
     text-align: end;
-    color: var(--text-secondary);
-    font-size: var(--font-md);
   }
 
   &__text {
     height: fit-content;
     text-align: end;
 
-    & > span {
-      color: var(--text-primary);
-      font-size: var(--font-xxl);
-      font-weight: 300;
-    }
-
     & > span:nth-child(2) {
       margin-left: 5px;
-      font-size: var(--font-lg);
     }
   }
 }

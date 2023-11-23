@@ -4,6 +4,7 @@ import { inject } from 'vue';
 import { vRipple } from '@/directives';
 import { type TodoCategoryType, type TodoInjectionType } from '@/types/todo';
 import { TodoInjectionKey } from '@/injection/todo';
+import TextComponent from '../TextComponent.vue';
 
 interface Props {
   todoCategories: TodoCategoryType[];
@@ -16,7 +17,7 @@ const { changeSelected } = inject(TodoInjectionKey) as TodoInjectionType;
 
 <template>
   <div class="dashboard-title">
-    <span>Tasks: </span>
+    <TextComponent text="Tasks: " color="white" />
     <div class="dashboard-title__button-wrapper">
       <button
         v-for="(category, index) in todoCategories"
@@ -25,7 +26,7 @@ const { changeSelected } = inject(TodoInjectionKey) as TodoInjectionType;
         v-ripple
       >
         <component :is="category.icon" />
-        <span>{{ category.title }}</span>
+        <TextComponent :text="category.title" is-upper color="white" />
       </button>
     </div>
   </div>
@@ -38,7 +39,6 @@ const { changeSelected } = inject(TodoInjectionKey) as TodoInjectionType;
   flex-direction: row;
   align-items: center;
   overflow-x: scroll;
-  color: var(--white);
 
   & > span {
     margin-right: 20px;
@@ -58,11 +58,6 @@ const { changeSelected } = inject(TodoInjectionKey) as TodoInjectionType;
       color: var(--white);
       transition: background 0.2s ease-in;
       padding: 12px 30px;
-
-      & > span {
-        font-size: var(--font-md);
-        text-transform: uppercase;
-      }
 
       & > svg {
         width: 20px;

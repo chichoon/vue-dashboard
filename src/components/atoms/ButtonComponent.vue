@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { vRipple } from '@/directives';
 import type { ColorType } from '@/types/common';
+import TextComponent from './TextComponent.vue';
 
 interface Props {
   color: ColorType;
@@ -24,7 +25,7 @@ defineProps<Props>();
     ]"
     v-ripple
   >
-    <span>{{ text }}</span>
+    <TextComponent :text="text" color="white" />
   </button>
 </template>
 
@@ -34,11 +35,6 @@ defineProps<Props>();
   border-radius: 3px;
   padding: 12px 30px;
   transition: box-shadow 0.2s ease-in;
-
-  & > span {
-    color: var(--white);
-    font-size: var(--font-md);
-  }
 
   &--rounded {
     border-radius: 100em;

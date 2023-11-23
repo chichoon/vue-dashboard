@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 
 import { CancelIcon } from '../icons';
+import TextComponent from './TextComponent.vue';
 
 interface Props {
   isInDarkArea?: boolean;
@@ -19,13 +20,14 @@ const handleClickEraseButton = () => {
 
 <template>
   <div :class="['search-bar', { 'search-bar--focused': isFocused }]">
-    <span
+    <TextComponent
       :class="[
         'search-bar__placeholder',
         { 'search-bar__placeholder--shrink': isFocused || searchValue.length >= 1 }
       ]"
-      >Search...</span
-    >
+      text="Search..."
+      color="secondary"
+    />
     <input
       :class="['search-bar__input', { 'search-bar__input--light': isInDarkArea }]"
       type="text"
@@ -74,15 +76,13 @@ const handleClickEraseButton = () => {
 
   &__placeholder {
     position: absolute;
-    color: var(--text-secondary);
-    font-size: var(--font-md);
     transition:
       font-size 0.2s cubic-bezier(0.25, 0.8, 0.25, 1),
       transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     &--shrink {
       transform: translateY(-20px);
-      font-size: var(--font-xs);
+      font-size: var(--font-xs) !important;
     }
   }
 

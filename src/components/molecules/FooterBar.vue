@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LinkTextButton from '../atoms/LinkTextButton.vue';
+import TextComponent from '../atoms/TextComponent.vue';
 import { HeartIcon } from '../icons';
 </script>
 
@@ -12,9 +13,9 @@ import { HeartIcon } from '../icons';
       <LinkTextButton text="licenses" />
     </div>
     <div class="footer__right">
-      <span>© 2023 Creative Tim, made with</span>
+      <TextComponent text="© 2023 Creative Tim, made with" color="secondary" />
       <HeartIcon />
-      <span>for a better web</span>
+      <TextComponent text="for a better web" color="secondary" />
     </div>
   </footer>
 </template>

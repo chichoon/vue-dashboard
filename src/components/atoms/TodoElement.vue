@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import { PencilIcon, CancelIcon } from '@/components/icons';
 import type { TodoType } from '@/types/todo';
 import CheckBox from './CheckBox.vue';
+import TextComponent from './TextComponent.vue';
 
 interface Props {
   todo: TodoType;
@@ -22,7 +23,7 @@ const handleClickDone = () => {
   <li :class="['dashboard-todo', { 'dashboard-todo--done': isDone }]">
     <button @click="handleClickDone" class="dashboard-todo__wrapper">
       <CheckBox :is-done="isDone" />
-      <span>{{ todo.title }}</span>
+      <TextComponent :text="todo.title" />
     </button>
     <div class="dashboard-todo__button-wrapper">
       <button><PencilIcon /></button>
@@ -59,8 +60,6 @@ const handleClickDone = () => {
     align-items: center;
 
     & > span {
-      font-size: var(--font-md);
-      color: var(--text-primary);
       text-align: start;
       margin: 0 10px;
     }

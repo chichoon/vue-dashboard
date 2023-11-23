@@ -22,7 +22,7 @@ const COLORS: ColorType[] = ['success', 'info', 'primary', 'warning', 'danger'];
           </li>
           <li v-for="color in COLORS" :key="color">
             <TextComponent :text="color" size="sm" color="secondary" />
-            <TextComponent text="The Life of Material Dashboard" size="md" :color="color" />
+            <TextComponent text="The Life of Material Dashboard" :color="color" />
           </li>
         </ul>
       </template>

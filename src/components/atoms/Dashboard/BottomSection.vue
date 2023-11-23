@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TextComponent from '../TextComponent.vue';
+
 interface Props {
   bottomText?: string;
 }
@@ -9,7 +11,7 @@ defineProps<Props>();
 <template>
   <div class="dashboard-bottom">
     <slot name="bottom-icon"></slot>
-    <span v-if="!!bottomText">{{ bottomText }}</span>
+    <TextComponent v-if="!!bottomText" :text="bottomText" color="secondary" />
   </div>
 </template>
 
@@ -25,10 +27,6 @@ defineProps<Props>();
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  & > span {
-    font-size: var(--font-md);
-  }
 }
 
 :slotted(.dashboard-bottom > svg) {

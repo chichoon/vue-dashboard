@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TextComponent from '../TextComponent.vue';
+
 interface Props {
   title: string;
   emphasisText?: string;
@@ -13,10 +15,8 @@ defineProps<Props>();
     <h4>{{ title }}</h4>
     <div class="dashboard-middle__subtext">
       <slot name="emphasis-text-icon"></slot>
-      <span class="dashboard-middle__emphasized-text" v-if="!!emphasisText">{{
-        emphasisText
-      }}</span>
-      <span class="dashboard-middle__common-text" v-if="!!commonText">{{ commonText }}</span>
+      <TextComponent v-if="!!emphasisText" color="success" :text="emphasisText" />
+      <TextComponent v-if="!!commonText" color="secondary" :text="commonText" />
     </div>
   </div>
 </template>
@@ -34,14 +34,6 @@ defineProps<Props>();
   &__subtext {
     vertical-align: middle;
     font-size: var(--font-md);
-  }
-
-  &__emphasized-text {
-    color: var(--notification-success);
-  }
-
-  &__common-text {
-    color: var(--text-secondary);
   }
 }
 

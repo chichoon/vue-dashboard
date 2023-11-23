@@ -18,6 +18,7 @@ import {
 import GridTable from '@/components/molecules/GridTable.vue';
 import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
 import { LineChart, BarChart, HeatMapChart } from '@/components/atoms/Charts';
+import TextComponent from '@/components/atoms/TextComponent.vue';
 </script>
 
 <template>
@@ -39,7 +40,6 @@ import { LineChart, BarChart, HeatMapChart } from '@/components/atoms/Charts';
       bottom-text="updated 10 days ago"
     >
       <template #top><BarChart /></template>
-      <template #middle><span>Last Campaign Performance</span></template>
     </DashboardGraphItem>
     <DashboardGraphItem
       title="Completed Tasks"

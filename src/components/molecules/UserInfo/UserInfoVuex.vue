@@ -4,6 +4,7 @@ import { computed } from 'vue';
 import { store } from '@/store';
 import { vRipple } from '@/directives';
 import Dashboard from '@/components/atoms/Dashboard';
+import TextComponent from '@/components/atoms/TextComponent.vue';
 
 const userInfo = computed(() => store.getters['userModule/getUserInfo']);
 </script>
@@ -14,9 +15,9 @@ const userInfo = computed(() => store.getters['userModule/getUserInfo']);
       <template #inner>
         <img src="/polite_cat.webp" alt="polite cat" class="user-info__image" />
         <div class="user-info__bottom">
-          <span>{{ userInfo.username }}</span>
-          <h4>{{ userInfo.firstName }} {{ userInfo.lastName }}</h4>
-          <p>{{ userInfo.bio }}</p>
+          <TextComponent :text="userInfo.username" color="secondary" />
+          <TextComponent :text="`${userInfo.firstName} ${userInfo.lastName}`" size="xl" />
+          <TextComponent :text="userInfo.bio" />
           <ev-button type="primary" shape="radius" v-ripple>Follow</ev-button>
         </div>
       </template>
@@ -58,20 +59,11 @@ const userInfo = computed(() => store.getters['userModule/getUserInfo']);
     padding: 15px 20px;
     border-radius: 3px;
 
-    & > span {
-      color: var(--text-secondary);
-      font-size: var(--font-md);
-    }
-
-    & > h4 {
+    & > span:nth-child(2) {
       margin: 10px 0;
-      color: var(--text-primary);
-      font-size: var(--font-xl);
     }
 
-    & > p {
-      color: var(--text-primary);
-      font-size: var(--font-md);
+    & > span:nth-child(3) {
       margin-bottom: 15px;
       text-align: center;
     }
