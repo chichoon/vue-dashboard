@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref, toRef } from 'vue';
 
 import { type HeatMapChartDataType, type HeatMapChartInnerDataType } from '@/types/chart';
-import { CHART_OPTIONS, INIT_CHART, X_LABELS, Y_LABELS } from '@/utils/heatMapChart.constant';
+import { CHART_OPTIONS, INIT_CHART, X_LABELS, Y_LABELS } from './heatMapChart.constant';
 
 const chartData = ref<HeatMapChartDataType>(INIT_CHART);
 const series1Data = toRef<HeatMapChartInnerDataType[]>(chartData.value.data.series1);

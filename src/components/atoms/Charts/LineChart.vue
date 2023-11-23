@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref, toRef } from 'vue';
 import dayjs, { Dayjs } from 'dayjs';
 
 import type { ChartDataType } from '@/types/chart';
-import { CHART_OPTIONS, INIT_CHART } from '@/utils/lineChart.constant';
+import { CHART_OPTIONS, INIT_CHART } from './lineChart.constant';
 
 const chartData = ref<ChartDataType>(INIT_CHART);
 const series1Data = toRef<number[]>(chartData.value.data.series1);

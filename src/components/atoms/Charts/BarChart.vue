@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref, toRef } from 'vue';
 
 import { type ChartDataType } from '@/types/chart';
-import { INIT_CHART, CHART_OPTIONS } from '@/utils/barChart.constant';
+import { INIT_CHART, CHART_OPTIONS } from './barChart.constant';
 
 const chartData = ref<ChartDataType>(INIT_CHART);
 const series1Data = toRef<number[]>(chartData.value.data.series1);
