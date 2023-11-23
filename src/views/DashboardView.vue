@@ -114,11 +114,11 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
       </template>
     </DashboardTitleItem>
     <DashboardTodoItem color="success" />
-    <!-- <DashboardGraphItem title="Gauge Chart" subtitle="Brand-new Gauge Chart (good)" color="warning">
+    <DashboardGraphItem title="Gauge Chart" subtitle="Brand-new Gauge Chart (good)" color="warning">
       <template #top>
         <GaugeChart />
       </template>
-    </DashboardGraphItem> -->
+    </DashboardGraphItem>
   </div>
 </template>
 
