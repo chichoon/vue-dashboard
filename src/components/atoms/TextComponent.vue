@@ -42,6 +42,7 @@ defineProps<Props>();
   color: var(--text-primary);
   font-weight: 500;
   font-size: var(--font-md);
+  display: inline-block;
 
   &--xs {
     font-size: var(--font-xs);
