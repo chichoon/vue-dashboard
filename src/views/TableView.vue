@@ -12,7 +12,7 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
       subtitle="Here is a subtitle for this table"
     >
       <template #bottom>
-        <GridTable color="success" :table-data="TABLE_DATA" :table-headings="TABLE_HEADERS" />
+        <GridTable :table-data="TABLE_DATA" :table-headings="TABLE_HEADERS" />
       </template>
     </DashboardTitleItem>
     <DashboardTitleItem

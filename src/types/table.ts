@@ -1,7 +1,7 @@
-export interface TableDataType {
-  id: number;
-  name: string;
-  salary: number;
-  country: string;
-  city: string;
+export interface TableHeadersType {
+  caption: string;
+  field: string;
+  type: string;
+  width: number;
+  hiddenDisplay?: boolean;
 }

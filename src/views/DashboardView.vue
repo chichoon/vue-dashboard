@@ -15,10 +15,9 @@ import {
   TimePastIcon,
   TwitterIcon
 } from '@/components/icons';
+import { LineChart, BarChart, HeatMapChart } from '@/components/atoms/Charts';
 import GridTable from '@/components/molecules/GridTable.vue';
 import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
-import { LineChart, BarChart, HeatMapChart } from '@/components/atoms/Charts';
-import TextComponent from '@/components/atoms/TextComponent.vue';
 </script>
 
 <template>

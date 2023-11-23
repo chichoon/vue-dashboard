@@ -1,12 +1,27 @@
-import type { TableDataType } from '@/types/table';
+import type { TableHeadersType } from '@/types/table';
 
-export const TABLE_DATA: TableDataType[] = [
-  { id: 1, name: 'Dakota Rice', salary: 36738, country: 'Niger', city: 'Oud-Turnhout' },
-  { id: 2, name: 'Minerva Hooper', salary: 23738, country: 'Curaçao', city: 'Sinaai-Waas' },
-  { id: 3, name: 'Sage Rodriguez', salary: 56142, country: 'Netherlands', city: 'Baileux' },
-  { id: 4, name: 'Philip Chaney', salary: 38735, country: 'Korea, South', city: 'Gloucester' },
-  { id: 5, name: 'Doris Greene', salary: 63542, country: 'Malawi', city: 'Feldkirchen in Kärnten' },
-  { id: 6, name: 'Mason Porter', salary: 78615, country: 'Chile', city: 'Gloucester' }
+export const TABLE_DATA: (string | number)[][] = [
+  [1, 'Dakota Rice', 36738, 'Niger', 'Oud-Turnhout'],
+  [2, 'Minerva Hooper', 23738, 'Curaçao', 'Sinaai-Waas'],
+  [3, 'Sage Rodriguez', 56142, 'Netherlands', 'Baileux'],
+  [4, 'Philip Chaney', 38735, 'Korea', 'Gloucester'],
+  [5, 'Doris Greene', 63542, 'Malawi', 'Feldkirchen in Kärnten'],
+  [6, 'Mason Porter', 78615, 'Chile', 'Gloucester']
 ];
 
-export const TABLE_HEADERS = ['id', 'name', 'salary', 'country', 'city'];
+export const TABLE_HEADERS: TableHeadersType[] = [
+  { caption: 'id', field: 'id', type: 'number', width: 40 },
+  { caption: 'Name', field: 'name', type: 'string', width: 150 },
+  { caption: 'Salary', field: 'salary', type: 'number', width: 100 },
+  { caption: 'Country', field: 'country', type: 'string', width: 150 },
+  { caption: 'City', field: 'city', type: 'string', width: 300 }
+];
+
+export const TABLE_OPTIONS = {
+  adjust: true,
+  // columnWidth: 200,
+  useCheckbox: {
+    use: true,
+    mode: 'multi'
+  }
+};
