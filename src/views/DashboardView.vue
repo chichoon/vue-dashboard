@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { GaugeChart } from 'gauge-chart-library';
+
 import {
   DashboardIconItem,
   DashboardGraphItem,
@@ -112,6 +114,11 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
       </template>
     </DashboardTitleItem>
     <DashboardTodoItem color="success" />
+    <!-- <DashboardGraphItem title="Gauge Chart" subtitle="Brand-new Gauge Chart (good)" color="warning">
+      <template #top>
+        <GaugeChart />
+      </template>
+    </DashboardGraphItem> -->
   </div>
 </template>
 
