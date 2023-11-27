@@ -53,16 +53,5 @@ const { color } = defineProps<Props>();
     min-width: 33.33333%;
     flex: 33.3333%;
   }
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--white);
-    margin: 25px 0;
-    position: relative;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-    border-radius: 3px;
-    overflow: unset;
-  }
 }
 </style>
