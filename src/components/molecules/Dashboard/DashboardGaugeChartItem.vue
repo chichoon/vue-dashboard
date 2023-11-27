@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { GaugeChart } from 'gauge-chart-library';
+import 'gauge-chart-library/style.css';
 
 import Dashboard from '@/components/atoms/Dashboard';
 import type { ColorType } from '@/types/common';
@@ -33,7 +34,7 @@ const handleSubValue = () => {
   <section class="dashboard-gauge">
     <Dashboard.WrapperSection type="graph">
       <template #inner>
-        <Dashboard.TopSection :color="color" type="graph">
+        <Dashboard.TopSection :color="color" type="graph" class="dashboard-gauge__top">
           <template #top>
             <GaugeChart
               start-color="#ffffff50"
@@ -68,6 +69,11 @@ const handleSubValue = () => {
     flex: 33.3333%;
   }
 
+  &__top {
+    width: 100%;
+    height: 160px;
+  }
+
   &__middle {
     padding: 15px;
 
@@ -79,6 +85,7 @@ const handleSubValue = () => {
   }
 
   &__button-wrapper {
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -86,3 +93,5 @@ const handleSubValue = () => {
   }
 }
 </style>
+
+<style lang="scss"></style>
