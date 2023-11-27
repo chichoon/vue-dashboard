@@ -14,9 +14,9 @@ export const vRipple = {
       );
       el.append(circle);
       event.stopPropagation();
-      setTimeout(function () {
+      circle.addEventListener('animationend', function () {
         el.removeChild(circle);
-      }, 300);
+      });
     };
   }
 };
