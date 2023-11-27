@@ -114,6 +114,8 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
     </DashboardTitleItem>
     <DashboardTodoItem color="success" />
     <DashboardGaugeChartItem color="info" />
+    <DashboardGaugeChartItem color="warning" />
+    <DashboardGaugeChartItem color="success" />
   </div>
 </template>
 

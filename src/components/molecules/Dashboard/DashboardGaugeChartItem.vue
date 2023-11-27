@@ -47,9 +47,9 @@ const handleSubValue = () => {
         <div class="dashboard-gauge__middle">
           <h4>Gauge Chart</h4>
           <div class="dashboard-gauge__button-wrapper">
-            <ButtonComponent text="-1" color="info" @click="handleSubValue" />
-            <ButtonComponent text="Random Number" color="info" @click="handleGetRandomValue" />
-            <ButtonComponent text="+1" color="info" @click="handleAddValue" />
+            <ButtonComponent text="-1" :color="color" @click="handleSubValue" />
+            <ButtonComponent text="Random Number" :color="color" @click="handleGetRandomValue" />
+            <ButtonComponent text="+1" :color="color" @click="handleAddValue" />
           </div>
         </div>
       </template>
