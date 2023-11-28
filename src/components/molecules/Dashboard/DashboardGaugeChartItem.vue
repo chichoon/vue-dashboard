@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onBeforeUnmount, ref } from 'vue';
 import { GaugeChart } from 'gauge-chart-library';
 import 'gauge-chart-library/style.css';
 
@@ -14,9 +14,17 @@ interface Props {
 const { color } = defineProps<Props>();
 
 const gaugeValue = ref<number>(0);
+const timeoutID = ref<number>(0);
+
+const generateIntervalRandomValue = () => {
+  timeoutID.value = setTimeout(() => {
+    gaugeValue.value = Math.random() * 100;
+    generateIntervalRandomValue();
+  }, 5000);
+};
 
 const handleGetRandomValue = () => {
-  gaugeValue.value = Math.floor(Math.random() * 100);
+  gaugeValue.value = Math.random() * 100;
 };
 
 const handleAddValue = () => {
@@ -28,6 +36,19 @@ const handleSubValue = () => {
   if (gaugeValue.value <= 0) return;
   gaugeValue.value -= 1;
 };
+
+const handleGetIntervalRandomValue = () => {
+  generateIntervalRandomValue();
+};
+
+const handleStopIntervalRandomValue = () => {
+  clearTimeout(timeoutID.value);
+  timeoutID.value = 0;
+};
+
+onBeforeUnmount(() => {
+  clearTimeout(timeoutID.value);
+});
 </script>
 
 <template>
@@ -40,6 +61,7 @@ const handleSubValue = () => {
               start-color="#ffffff50"
               end-color="#ffffffff"
               background-color="rgba(255, 255, 255, 0.3)"
+              secondary-text-color="#000000"
               :value="gaugeValue"
               :max-value="100"
             />
@@ -51,6 +73,20 @@ const handleSubValue = () => {
             <ButtonComponent text="-1" :color="color" @click="handleSubValue" />
             <ButtonComponent text="Random Number" :color="color" @click="handleGetRandomValue" />
             <ButtonComponent text="+1" :color="color" @click="handleAddValue" />
+          </div>
+          <div class="dashboard-gauge__button-wrapper">
+            <ButtonComponent
+              v-if="timeoutID === 0"
+              text="Start Interval Random"
+              :color="color"
+              @click="handleGetIntervalRandomValue"
+            />
+            <ButtonComponent
+              v-if="timeoutID !== 0"
+              text="Stop Interval Random"
+              :color="color"
+              @click="handleStopIntervalRandomValue"
+            />
           </div>
         </div>
       </template>
@@ -90,6 +126,14 @@ const handleSubValue = () => {
     flex-direction: row;
     width: 100%;
     gap: 5px;
+
+    &:last-child {
+      margin-top: 10px;
+
+      & > button {
+        flex: 1;
+      }
+    }
   }
 }
 </style>
