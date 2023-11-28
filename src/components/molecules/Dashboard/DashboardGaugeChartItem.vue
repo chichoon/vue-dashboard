@@ -71,7 +71,12 @@ onBeforeUnmount(() => {
           <h4>Gauge Chart</h4>
           <div class="dashboard-gauge__button-wrapper">
             <ButtonComponent text="-1" :color="color" @click="handleSubValue" />
-            <ButtonComponent text="Random Number" :color="color" @click="handleGetRandomValue" />
+            <ButtonComponent
+              text="Random Number"
+              :color="color"
+              @click="handleGetRandomValue"
+              class="dashboard-gauge__random-button"
+            />
             <ButtonComponent text="+1" :color="color" @click="handleAddValue" />
           </div>
           <div class="dashboard-gauge__button-wrapper">
@@ -118,6 +123,10 @@ onBeforeUnmount(() => {
       color: var(--text-primary);
       margin-bottom: 5px;
     }
+  }
+
+  &__random-button {
+    flex: 1;
   }
 
   &__button-wrapper {
