@@ -21,7 +21,7 @@ const IMAGE_SET: GNBImageType[] = [1, 2, 3, 4];
           { 'background-selector__image-button--selected': imageIndex === settings.image }
         ]"
         :key="imageIndex"
-        :style="`background-image: url(/sidebar_${imageIndex}.jpg)`"
+        :style="`background-image: url(./sidebar_${imageIndex}.jpg)`"
         @click="() => settingsStore.changeImageSettings(imageIndex)"
       />
     </div>
