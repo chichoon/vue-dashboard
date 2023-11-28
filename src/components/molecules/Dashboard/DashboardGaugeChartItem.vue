@@ -61,7 +61,8 @@ onBeforeUnmount(() => {
               start-color="#ffffff50"
               end-color="#ffffffff"
               background-color="rgba(255, 255, 255, 0.3)"
-              secondary-text-color="#000000"
+              primary-text-color="#ffffff"
+              secondary-text-color="#ffffff80"
               :value="gaugeValue"
               :max-value="100"
             />
