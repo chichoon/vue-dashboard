@@ -70,7 +70,7 @@ const handleSubValue = () => {
   }
 
   &__top {
-    width: 100%;
+    width: calc(100% - 30px);
     height: 160px;
   }
 

@@ -50,6 +50,9 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
     >
       <template #top><HeatMapChart /></template>
     </DashboardGraphItem>
+    <DashboardGaugeChartItem color="info" />
+    <DashboardGaugeChartItem color="warning" />
+    <DashboardGaugeChartItem color="success" />
     <DashboardIconItem
       title="Revenue"
       text-primary="$34,245"
@@ -113,9 +116,6 @@ import { TABLE_HEADERS, TABLE_DATA } from '@/utils/table.constant';
       </template>
     </DashboardTitleItem>
     <DashboardTodoItem color="success" />
-    <DashboardGaugeChartItem color="info" />
-    <DashboardGaugeChartItem color="warning" />
-    <DashboardGaugeChartItem color="success" />
   </div>
 </template>
 
