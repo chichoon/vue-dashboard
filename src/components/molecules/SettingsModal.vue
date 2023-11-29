@@ -21,10 +21,10 @@ import ButtonComponent from '../atoms/ButtonComponent.vue';
 
 <style scoped lang="scss">
 .settings-modal {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: row;
-  top: 10px;
+  top: 80px;
   right: 60px;
   z-index: 5;
 
