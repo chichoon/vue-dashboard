@@ -14,9 +14,13 @@ export const vRipple = {
       );
       el.append(circle);
       event.stopPropagation();
-      circle.addEventListener('animationend', function () {
-        el.removeChild(circle);
-      });
+    };
+
+    el.onanimationend = function (event: AnimationEvent) {
+      console.log(event);
+      // event가 animataion name으로 target이 가능하다
+      // onclick 안에 이벤트 핸들러를 중첩시키는 것은 좋지 않다
+      // 메모리 이슈
     };
   }
 };
