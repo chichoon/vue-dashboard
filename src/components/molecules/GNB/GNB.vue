@@ -12,7 +12,7 @@ const { settings } = storeToRefs(settingsStore);
 </script>
 
 <template>
-  <div class="gnb" :style="`background-image: url(/sidebar_${settings.image}.jpg);`">
+  <div class="gnb" :style="`background-image: url(/vue-dashboard/sidebar_${settings.image}.jpg);`">
     <div class="gnb__inner">
       <a href="https://github.com/chichoon" target="_blank" noreferrer class="gnb__title">
         <div class="gnb__vue-icon">
