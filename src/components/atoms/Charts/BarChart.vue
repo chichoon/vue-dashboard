@@ -3,10 +3,11 @@ import { onMounted, onUnmounted, ref, toRef } from 'vue';
 
 import { type ChartDataType } from '@/types/chart';
 import { INIT_CHART, CHART_OPTIONS } from './barChart.constant';
+import { timeoutInterval } from '@/utils/timeoutInterval';
 
 const chartData = ref<ChartDataType>(INIT_CHART);
 const series1Data = toRef<number[]>(chartData.value.data.series1);
-const intervalID = ref<number>(-1);
+const timeoutID = ref<number>(0);
 
 function setRandomChartData() {
   series1Data.value.length = 0;
@@ -17,11 +18,11 @@ function setRandomChartData() {
 
 onMounted(() => {
   setRandomChartData();
-  intervalID.value = setInterval(setRandomChartData, 1000);
+  timeoutInterval(timeoutID, setRandomChartData);
 });
 
 onUnmounted(() => {
-  clearInterval(intervalID.value);
+  clearTimeout(timeoutID.value);
 });
 </script>
 

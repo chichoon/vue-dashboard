@@ -4,11 +4,12 @@ import dayjs, { Dayjs } from 'dayjs';
 
 import type { ChartDataType } from '@/types/chart';
 import { CHART_OPTIONS, INIT_CHART } from './lineChart.constant';
+import { timeoutInterval } from '@/utils/timeoutInterval';
 
 const chartData = ref<ChartDataType>(INIT_CHART);
 const series1Data = toRef<number[]>(chartData.value.data.series1);
 const labels = toRef<Dayjs[]>(chartData.value.labels as Dayjs[]);
-const intervalID = ref<number>(-1);
+const timeoutID = ref<number>(-1);
 const timeValue = ref<Dayjs>(dayjs());
 
 function addRandomChartData() {
@@ -24,11 +25,11 @@ function addRandomChartData() {
 
 onMounted(() => {
   for (let i = 0; i < 60; i++) addRandomChartData();
-  intervalID.value = setInterval(addRandomChartData, 1000);
+  timeoutInterval(timeoutID, addRandomChartData);
 });
 
 onUnmounted(() => {
-  clearInterval(intervalID.value);
+  clearInterval(timeoutID.value);
 });
 </script>
 

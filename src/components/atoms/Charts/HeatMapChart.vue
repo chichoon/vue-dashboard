@@ -3,10 +3,11 @@ import { onMounted, onUnmounted, ref, toRef } from 'vue';
 
 import { type HeatMapChartDataType, type HeatMapChartInnerDataType } from '@/types/chart';
 import { CHART_OPTIONS, INIT_CHART, X_LABELS, Y_LABELS } from './heatMapChart.constant';
+import { timeoutInterval } from '@/utils/timeoutInterval';
 
 const chartData = ref<HeatMapChartDataType>(INIT_CHART);
 const series1Data = toRef<HeatMapChartInnerDataType[]>(chartData.value.data.series1);
-const intervalID = ref<number>(-1);
+const timeoutID = ref<number>(-1);
 
 function setRandomChartData() {
   series1Data.value.length = 0;
@@ -19,11 +20,11 @@ function setRandomChartData() {
 
 onMounted(() => {
   setRandomChartData();
-  intervalID.value = setInterval(setRandomChartData, 1000);
+  timeoutInterval(timeoutID, setRandomChartData);
 });
 
 onUnmounted(() => {
-  clearInterval(intervalID.value);
+  clearInterval(timeoutID.value);
 });
 </script>
 
